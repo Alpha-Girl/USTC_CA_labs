@@ -2,7 +2,11 @@
 
 ## 学号 PB18000290 姓名 胡毅翔
 
-[logisim实现]()
+### CPU设计
+
+[logisim实现](https://github.com/Alpha-Girl/CA2021_labs/tree/main/lab1/src)
+
+### 回答下列问题
 
 1. 描述执行一条 XOR 指令的过程（数据通路、控制信号等）。
 
