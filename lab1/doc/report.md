@@ -14,7 +14,7 @@
 
 4. 如果要实现 CSR 指令（csrrw，csrrs，csrrc，csrrwi，csrrsi，csrrci），设计图中还需要增加什么部件和数据通路？给出详细说明。
 
-   如果要实现CSR（Control Status Register）指令,需要增加一个32位寄存器
+   如果要实现CSR（Control Status Register）指令,需要增加regfile
 
 5. Verilog 如何实现立即数的扩展？
 
@@ -23,6 +23,8 @@
    `assign ex_data=instruct[15]?{16'hffff,instruct[15:0]}:{16'h0000,instruct[15:0]};`
 
 6. 如何实现 Data Memory 的非字对齐的 Load 和 Store？
+
+   将
 
 7. ALU 模块中，默认 wire 变量是有符号数还是无符号数？
 
@@ -40,4 +42,4 @@
 
 12. 0 号寄存器值始终为 0，是否会对 forward 的处理产生影响？
 
-    否
+    会，在forward中需要加入判断是否为0号寄存器，输出一个选择信号，若为0号寄存器，则输出0.
