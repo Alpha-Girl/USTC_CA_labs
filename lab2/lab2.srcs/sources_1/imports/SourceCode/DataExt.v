@@ -29,8 +29,11 @@ module DataExt(
     input wire [2:0] RegWriteW,
     output reg [31:0] OUT
     );    
-        
-    // 请补全此处代码
+    always @(*) begin
+        case(RegWriteW):
+            `NOREGWRITE:
+        edncase
+    end
 
 endmodule
 

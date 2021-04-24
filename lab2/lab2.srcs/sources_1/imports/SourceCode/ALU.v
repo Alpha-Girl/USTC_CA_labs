@@ -29,20 +29,20 @@ module ALU(
     input wire [3:0] AluContrl,
     output reg [31:0] AluOut
     );    
-    always @() begin
+    always @(*) begin
         case (AluContrl)
             `SLL: AluOut<= Operand1 << Operand2[4:0];
             `SRL: AluOut<= Operand1 >> Operand2[4:0];
-            `SRA: AluOut<= ( {32{ Operand1[31]} } << (6'd32 - {1'b0,Operand2[4:0] } ) )|Operand1 >> Operand2[4:0];
+            `SRA: AluOut<= Operand1 >> Operand2[4:0];
             `ADD: AluOut<= Operand1+Operand2;
             `SUB:AluOut<= Operand1-Operand2;
             `XOR:AluOut<=Operand1^Operand2;
             `OR:AluOUt<=Operand1|Operand2;
             `AND:AluOUt<=Operand1&Operand2;
-            `SLT:AluOut<=(Operand1[31]>Operand2[31] ||(Operand1[31]==Operand2[31]&&Operand1[30:0]>=Operand2[30:0]) )?32'h0:32'h1;
+            `SLT:AluOut<=(Operand1<Operand2)?32'h1:32'h0;
             `SLTU:AluOut<=(Operand1<Operand2)?32'h1:32'h0;
-            `LUI:ALuOut<=(Operand1<<12)&32'hfffff000;
-            default: AluOut<=32'h0;
+            `LUI:ALuOut<=(Operand1)&32'hfffff000;
+            default: AluOut<=32'hxxxxxxxx;
         endcase
     end
     // 请补全此处代码

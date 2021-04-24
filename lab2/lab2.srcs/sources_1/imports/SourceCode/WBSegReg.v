@@ -84,10 +84,10 @@ module WBSegReg(
 
     wire [31:0] RD_raw;
     DataRam DataRamInst (
-        .clk    (???),                      //请完善代码
-        .wea    (???),                      //请完善代码
-        .addra  (???),                      //请完善代码
-        .dina   (???),                      //请完善代码
+        .clk    (clk),                      //请完善代码
+        .wea    (WE),                      //请完善代码
+        .addra  (A[31:2]),                      //请完善代码
+        .dina   (WD),                      //请完善代码
         .douta  ( RD_raw         ),
         .web    ( WE2            ),
         .addrb  ( A2[31:2]       ),

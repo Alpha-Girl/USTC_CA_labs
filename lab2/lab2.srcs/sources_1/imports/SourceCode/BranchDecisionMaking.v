@@ -27,8 +27,14 @@ module BranchDecisionMaking(
     input wire [31:0] Operand1,Operand2,
     output reg BranchE
     );
-    
-    // 请补全此处代码
+    always @(*) begin
+        case(BranchTypeE):
+            `BEQ: BranchE<=(Operand1==Operand2)?1'b1:1'b0;
+            `BNE:BranchE<=(Operand1==Operand2)?1'b0:1'b1;
+            `BLT:BranchE<=(Operand1+Operand2>=32'h0)?1'b1:1'b0;
+            `BLTU:BranchE<=(Operand1<Operand2)?1'b0:1'b1;
+            `default: BranchE<=1'b0;  //NOBRANCH
+    end
 
 endmodule
 
