@@ -87,9 +87,9 @@ always@(posedge clk)
 wire [31: 0] RD_raw;
 DataRam DataRamInst (
             .clk (clk),                       //请完善代码
-            .wea (WE),                       //请完善代码
+            .wea (WE<<A[1:0]),                       //请完善代码
             .addra (A[31: 2]),                       //请完善代码
-            .dina (WD),                       //请完善代码
+            .dina (WD<<(8*A[1:0])),                       //请完善代码
             .douta ( RD_raw ),
             .web ( WE2 ),
             .addrb ( A2[31: 2] ),

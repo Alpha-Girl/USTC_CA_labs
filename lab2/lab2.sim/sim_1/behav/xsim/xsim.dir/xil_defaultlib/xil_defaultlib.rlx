@@ -3,10 +3,10 @@
 May 24 2019
 15:06:07
 D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
-D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v,1620440027,verilog,,,,testBench,,,,,,,,
+D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v,1620469612,verilog,,,,testBench,,,,,,,,
 D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v,1618671650,verilog,,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v,,DataRam,,,,,,,,
 D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v,1618671650,verilog,,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v,,InstructionRam,,,,,,,,
-D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v,1620438428,verilog,,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/Parameters.v,ALU,,,,,,,,
+D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v,1620467472,verilog,,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/Parameters.v,ALU,,,,,,,,
 D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v,1620439725,verilog,,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/Parameters.v,BranchDecisionMaking,,,,,,,,
 D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v,1620464461,verilog,,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/Parameters.v,ControlUnit,,,,,,,,
 D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v,1620437653,verilog,,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/Parameters.v,DataExt,,,,,,,,
@@ -20,4 +20,4 @@ D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v,
 D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/Parameters.v,1618671650,verilog,,,,,,,,,,,,
 D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v,1620398321,verilog,,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v,,RV32Core,,,,,,,,
 D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v,1620398309,verilog,,D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v,,RegisterFile,,,,,,,,
-D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v,1620398332,verilog,,D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v,,WBSegReg,,,,,,,,
+D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v,1620469474,verilog,,D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v,,WBSegReg,,,,,,,,

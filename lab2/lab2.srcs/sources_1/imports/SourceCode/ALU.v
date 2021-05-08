@@ -38,7 +38,7 @@ always @( * ) begin
         `SRL:
             AluOut <= Operand1 >> Operand2[4: 0];
         `SRA:
-            AluOut <= Operand1 >> Operand2[4: 0];
+            AluOut <= Operand1_S >>> Operand2[4: 0];
         `ADD:
             AluOut <= Operand1 + Operand2;
         `SUB:
