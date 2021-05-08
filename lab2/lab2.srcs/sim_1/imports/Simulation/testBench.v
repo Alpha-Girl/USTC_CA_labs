@@ -13,10 +13,10 @@
 // !!! ALL YOU NEED TO CHANGE IS 4 FILE PATH BELOW !!!	
 //				(they are all optional, you can run cpu without change paths here,if files are failed to open, we will not dump the content to .txt and will not try to initial your bram)
 //////////////////////////////////////////////////////////////////////////////////
-`define DataRamContentLoadPath "D:\\Vivado\\CA_lab\\testbench\\1testAll.data"           //修改此处为测试数据路径
-`define InstRamContentLoadPath "D:\\Vivado\\CA_lab\\testbench\\1testAll.inst"           //修改此处为测试数据路径
-`define DataRamContentSavePath "D:\\Vivado\\CA_lab\\testbench\\DataRamContent.txt"      //修改此处为测试数据路径
-`define InstRamContentSavePath "D:\\Vivado\\CA_lab\\testbench\\InstRamContent.txt"      //修改此处为测试数据路径
+`define DataRamContentLoadPath "D:\\USTC\\CA2021_labs\\lab2\\lab2.srcs\\sim_1\\imports\\Simulation\\1testAll.data"           //修改此处为测试数据路径
+`define InstRamContentLoadPath "D:\\USTC\\CA2021_labs\\lab2\\lab2.srcs\\sim_1\\imports\\Simulation\\1testAll.inst"           //修改此处为测试数据路径
+`define DataRamContentSavePath "D:\\USTC\\CA2021_labs\\lab2\\lab2.srcs\\sim_1\\imports\\Simulation\\DataRamContent.txt"      //修改此处为测试数据路径
+`define InstRamContentSavePath "D:\\USTC\\CA2021_labs\\lab2\\lab2.srcs\\sim_1\\imports\\Simulation\\InstRamContent.txt"      //修改此处为测试数据路径
 `define BRAMWORDS 4096  //a word is 32bit, so our bram is 4096*32bit
 
 module testBench(
