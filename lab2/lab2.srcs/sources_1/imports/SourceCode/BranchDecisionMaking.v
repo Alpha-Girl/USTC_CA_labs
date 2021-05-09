@@ -45,9 +45,9 @@ always @( * ) begin
             BranchE <= (Operand1 >= Operand2) ? 1'b1 : 1'b0;
         default:
             BranchE <= 1'b0;  //NOBRANCH
-        endcase
-    end
+    endcase
+end
 
 
-    endmodule
+endmodule
 

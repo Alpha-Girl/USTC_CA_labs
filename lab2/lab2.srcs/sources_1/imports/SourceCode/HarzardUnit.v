@@ -36,9 +36,9 @@ module HarzardUnit(
            input wire [2: 0] RegWriteM, RegWriteW,
            output reg StallF, FlushF, StallD, FlushD, StallE, FlushE, StallM, FlushM, StallW, FlushW,
            output reg [1: 0] Forward1E, Forward2E,
-            input wire csrreg_write_enM,csrreg_write_enW,csrreg_write_enE,
-            input wire [11:0] csrSrcM,csrSrcW,csrSrcE,
-            output reg [1:0] Forwardcsr
+           input wire CSRreg_write_enM, CSRreg_write_enW, CSRreg_write_enE,
+           input wire [11: 0] CSRSrcM, CSRSrcW, CSRSrcE,
+           output reg [1: 0] ForwardCSR
        );
 
 always @ ( * )
@@ -72,16 +72,19 @@ always@( * )begin
     else
         Forward2E <= 2'b00;
 end
-always @(*) begin
-    if ((csrSrcE==csrSrcM)&&(csrreg_write_enE==csrreg_write_enM)&&(csrreg_write_enE)) begin
-    Forwardcsr<=2'b10;
-        
+always @( * ) begin
+    if ((CSRSrcE == CSRSrcM) && (CSRreg_write_enE == CSRreg_write_enM) && (CSRreg_write_enE))
+    begin
+        ForwardCSR <= 2'b10;
+
     end
-    else if ((csrSrcE==csrSrcW)&&(csrreg_write_enE==csrreg_write_enW)&&(csrreg_write_enE))begin
-          Forwardcsr<=2'b01 ;
+    else if ((CSRSrcE == CSRSrcW) && (CSRreg_write_enE == CSRreg_write_enW) && (CSRreg_write_enE))
+    begin
+        ForwardCSR <= 2'b01 ;
     end
-    else begin
-         Forwardcsr <=2'b00 ;
+    else
+    begin
+        ForwardCSR <= 2'b00 ;
     end
 end
 endmodule

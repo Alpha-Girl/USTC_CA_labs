@@ -36,13 +36,14 @@ module MEMSegReg(
            output reg [3: 0] MemWriteM,
            input wire LoadNpcE,
            output reg LoadNpcM,
-           input wire csrreg_write_enE,
-           input wire [31:0] csrregOutE,
-           input wire [11:0] csrSrcE,
-           output reg [11:0] csrSrcM,
-           output reg csrreg_write_enM,
-           input wire [31:0]csrALU_out,
-           output reg [31:0] csrreg_write_dataM
+           //CSR Part
+           input wire CSRreg_write_enE,
+           input wire [31: 0] CSRregOutE,
+           input wire [11: 0] CSRSrcE,
+           output reg [11: 0] CSRSrcM,
+           output reg CSRreg_write_enM,
+           input wire [31: 0]CSRALU_out,
+           output reg [31: 0] CSRreg_write_dataM
        );
 initial
 begin
@@ -54,21 +55,22 @@ begin
     MemToRegM = 1'b0;
     MemWriteM = 4'b0;
     LoadNpcM = 0;
-    csrSrcM =12'b0;
-    csrreg_write_enM =1'b0;
-    csrreg_write_dataM =32'b0;
+    CSRSrcM = 12'b0;
+    CSRreg_write_enM = 1'b0;
+    CSRreg_write_dataM = 32'b0;
 end
 
 always@(posedge clk)
     if (en)
     begin
-    if(clear)
-    AluOutM<=32'b0;
-    else if (csrreg_write_enE)
-        AluOutM <= csrregOutE;
-   else begin
-       AluOutM <= AluOutE;
-   end
+        if (clear)
+            AluOutM <= 32'b0;
+        else if (CSRreg_write_enE)
+            AluOutM <= CSRregOutE;
+        else
+        begin
+            AluOutM <= AluOutE;
+        end
         StoreDataM <= clear ? 0 : ForwardData2;
         RdM <= clear ? 5'h0 : RdE;
         PCM <= clear ? 0 : PCE;
@@ -76,9 +78,9 @@ always@(posedge clk)
         MemToRegM <= clear ? 1'b0 : MemToRegE;
         MemWriteM <= clear ? 4'b0 : MemWriteE;
         LoadNpcM <= clear ? 0 : LoadNpcE;
-        csrSrcM<= clear ? 12'b0 : csrSrcE;
-        csrreg_write_enM<= clear ? 0 :csrreg_write_enE;
-        csrreg_write_dataM<=clear? 32'b0:csrALU_out;
+        CSRSrcM <= clear ? 12'b0 : CSRSrcE;
+        CSRreg_write_enM <= clear ? 0 : CSRreg_write_enE;
+        CSRreg_write_dataM <= clear ? 32'b0 : CSRALU_out;
     end
 
 endmodule

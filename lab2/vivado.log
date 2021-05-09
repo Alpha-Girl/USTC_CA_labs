@@ -2,10 +2,10 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sun May  9 08:38:41 2021
-# Process ID: 14964
+# Start of session at: Sun May  9 15:10:08 2021
+# Process ID: 6496
 # Current directory: D:/USTC/CA2021_labs/lab2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5516 D:\USTC\CA2021_labs\lab2\lab2.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15472 D:\USTC\CA2021_labs\lab2\lab2.xpr
 # Log file: D:/USTC/CA2021_labs/lab2/vivado.log
 # Journal file: D:/USTC/CA2021_labs/lab2\vivado.jou
 #-----------------------------------------------------------
@@ -16,7 +16,7 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/XIlinx/Vivado/2019.1/data/ip'.
-open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 671.465 ; gain = 76.164
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 719.738 ; gain = 76.891
 update_compile_order -fileset sources_1
 launch_simulation
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
@@ -29,7 +29,7 @@ INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs
 "xvlog --incr --relax -prj testBench_vlog.prj"
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
+INFO: [VRFC 10-311] analyzing module CSRALU
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
@@ -40,15 +40,15 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/
 INFO: [VRFC 10-311] analyzing module DataRam
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-311] analyzing module csrAddrex
-INFO: [VRFC 10-311] analyzing module csrex
-INFO: [VRFC 10-311] analyzing module csrDex
+INFO: [VRFC 10-311] analyzing module CSRAddrex
+INFO: [VRFC 10-311] analyzing module CSRex
+INFO: [VRFC 10-311] analyzing module CSRDex
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module HarzardUnit
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-311] analyzing module csrDid
-INFO: [VRFC 10-311] analyzing module csrAddrid
+INFO: [VRFC 10-311] analyzing module CSRDid
+INFO: [VRFC 10-311] analyzing module CSRAddrid
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module IFSegReg
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
@@ -66,12 +66,9 @@ INFO: [VRFC 10-311] analyzing module RegisterFile
 INFO: [VRFC 10-311] analyzing module CSRRegisterFile
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-311] analyzing module csrDwb
-INFO: [VRFC 10-311] analyzing module csrAddrwb
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module testBench
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 691.711 ; gain = 0.000
-INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
 "xelab -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log"
@@ -81,30 +78,20 @@ Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb6
 Using 2 slave threads.
 Starting static elaboration
 WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v:62]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:162]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 5 for port 'op3' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:204]
-WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 32 for port 'csrAmem' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:242]
-WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 32 for port 'csrAwb' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:243]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:295]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:192]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:256]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.CSRRegisterFile
+Compiling module xil_defaultlib.CSRALU
 Compiling module xil_defaultlib.NPC_Generator
 Compiling module xil_defaultlib.IFSegReg
 Compiling module xil_defaultlib.InstructionRam
 Compiling module xil_defaultlib.IDSegReg
 Compiling module xil_defaultlib.ControlUnit
 Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.CSRRegisterFile
-Compiling module xil_defaultlib.csrDid
-Compiling module xil_defaultlib.csrAddrid
-Compiling module xil_defaultlib.csrALU
-Compiling module xil_defaultlib.csrex
-Compiling module xil_defaultlib.csrDex
-Compiling module xil_defaultlib.csrAddrex
-Compiling module xil_defaultlib.csrDwb
-Compiling module xil_defaultlib.csrAddrwb
 Compiling module xil_defaultlib.RegisterFile
 Compiling module xil_defaultlib.EXSegReg
 Compiling module xil_defaultlib.ALU
@@ -122,8 +109,7 @@ WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simula
 WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 116. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot testBench_behav
-run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 691.711 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
@@ -144,13 +130,25 @@ source testBench.tcl
 # run 1000ns
 Initialing reg values...
 Loading DataRam Content from file...
-xsim: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 717.012 ; gain = 25.301
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'testBench_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 717.012 ; gain = 25.301
+launch_simulation: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 782.184 ; gain = 45.508
 current_wave_config {Untitled 1}
 Untitled 1
-add_wave {{/testBench/RV32Core1/csrALU1}} 
+add_wave {{/testBench/RV32Core1/Instr}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+Initialing reg values...
+Loading DataRam Content from file...
+Loading InstRam Content from file...
+Start Instruction Execution!
+Finish Instruction Execution!
+Saving DataRam Content to file...
+Saving InstRam Content to file...
+Simulation Ended!
+$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 787.777 ; gain = 0.000
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 launch_simulation
@@ -164,7 +162,7 @@ INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs
 "xvlog --incr --relax -prj testBench_vlog.prj"
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
+INFO: [VRFC 10-311] analyzing module CSRALU
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
@@ -175,15 +173,10 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/
 INFO: [VRFC 10-311] analyzing module DataRam
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-311] analyzing module csrAddrex
-INFO: [VRFC 10-311] analyzing module csrex
-INFO: [VRFC 10-311] analyzing module csrDex
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module HarzardUnit
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-311] analyzing module csrDid
-INFO: [VRFC 10-311] analyzing module csrAddrid
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module IFSegReg
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
@@ -201,8 +194,6 @@ INFO: [VRFC 10-311] analyzing module RegisterFile
 INFO: [VRFC 10-311] analyzing module CSRRegisterFile
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-311] analyzing module csrDwb
-INFO: [VRFC 10-311] analyzing module csrAddrwb
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module testBench
 INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
@@ -215,29 +206,148 @@ Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb6
 Using 2 slave threads.
 Starting static elaboration
 WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v:62]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:162]
-WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 32 for port 'csrAmem' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:242]
-WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 32 for port 'csrAwb' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:243]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:295]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:192]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:256]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.CSRRegisterFile
+Compiling module xil_defaultlib.CSRALU
 Compiling module xil_defaultlib.NPC_Generator
 Compiling module xil_defaultlib.IFSegReg
 Compiling module xil_defaultlib.InstructionRam
 Compiling module xil_defaultlib.IDSegReg
 Compiling module xil_defaultlib.ControlUnit
 Compiling module xil_defaultlib.ImmOperandUnit
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.EXSegReg
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.BranchDecisionMaking
+Compiling module xil_defaultlib.MEMSegReg
+Compiling module xil_defaultlib.DataRam
+Compiling module xil_defaultlib.WBSegReg
+Compiling module xil_defaultlib.DataExt
+Compiling module xil_defaultlib.HarzardUnit
+Compiling module xil_defaultlib.RV32Core
+Compiling module xil_defaultlib.testBench
+WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 77. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 91. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 102. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 116. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testBench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "testBench_behav -key {Behavioral:sim_1:Functional:testBench} -tclbatch {testBench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source testBench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Initialing reg values...
+Loading DataRam Content from file...
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'testBench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 804.273 ; gain = 1.051
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/testBench/RV32Core1/Instr}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+Initialing reg values...
+Loading DataRam Content from file...
+Loading InstRam Content from file...
+Start Instruction Execution!
+Finish Instruction Execution!
+Saving DataRam Content to file...
+Saving InstRam Content to file...
+Simulation Ended!
+$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
+run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 804.273 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testBench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CSRALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataExt
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataRam
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EXSegReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HarzardUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IDSegReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IFSegReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImmOperandUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionRam
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEMSegReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NPC_Generator
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RV32Core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-311] analyzing module CSRRegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WBSegReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testBench
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
+"xelab -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v:62]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:192]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:256]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.CSRRegisterFile
-Compiling module xil_defaultlib.csrDid
-Compiling module xil_defaultlib.csrAddrid
-Compiling module xil_defaultlib.csrALU
-Compiling module xil_defaultlib.csrex
-Compiling module xil_defaultlib.csrDex
-Compiling module xil_defaultlib.csrAddrex
-Compiling module xil_defaultlib.csrDwb
-Compiling module xil_defaultlib.csrAddrwb
+Compiling module xil_defaultlib.CSRALU
+Compiling module xil_defaultlib.NPC_Generator
+Compiling module xil_defaultlib.IFSegReg
+Compiling module xil_defaultlib.InstructionRam
+Compiling module xil_defaultlib.IDSegReg
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ImmOperandUnit
 Compiling module xil_defaultlib.RegisterFile
 Compiling module xil_defaultlib.EXSegReg
 Compiling module xil_defaultlib.ALU
@@ -278,159 +388,10 @@ Initialing reg values...
 Loading DataRam Content from file...
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'testBench_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 727.848 ; gain = 0.000
-current_wave_config {Untitled 2}
-Untitled 2
-add_wave {{/testBench/RV32Core1/csrALU1}} 
-current_wave_config {Untitled 2}
-Untitled 2
-add_wave {{/testBench/RV32Core1/Instr}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj testBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-311] analyzing module csrAddrex
-INFO: [VRFC 10-311] analyzing module csrex
-INFO: [VRFC 10-311] analyzing module csrDex
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-311] analyzing module csrDid
-INFO: [VRFC 10-311] analyzing module csrAddrid
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEMSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NPC_Generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-311] analyzing module CSRRegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-311] analyzing module csrDwb
-INFO: [VRFC 10-311] analyzing module csrAddrwb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module testBench
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xelab -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v:62]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:162]
-WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 32 for port 'csrAmem' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:242]
-WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 32 for port 'csrAwb' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:243]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:295]
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.NPC_Generator
-Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionRam
-Compiling module xil_defaultlib.IDSegReg
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.CSRRegisterFile
-Compiling module xil_defaultlib.csrDid
-Compiling module xil_defaultlib.csrAddrid
-Compiling module xil_defaultlib.csrALU
-Compiling module xil_defaultlib.csrex
-Compiling module xil_defaultlib.csrDex
-Compiling module xil_defaultlib.csrAddrex
-Compiling module xil_defaultlib.csrDwb
-Compiling module xil_defaultlib.csrAddrwb
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.EXSegReg
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.BranchDecisionMaking
-Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.DataRam
-Compiling module xil_defaultlib.WBSegReg
-Compiling module xil_defaultlib.DataExt
-Compiling module xil_defaultlib.HarzardUnit
-Compiling module xil_defaultlib.RV32Core
-Compiling module xil_defaultlib.testBench
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 77. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 91. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 102. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 116. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot testBench_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "testBench_behav -key {Behavioral:sim_1:Functional:testBench} -tclbatch {testBench.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source testBench.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Initialing reg values...
-Loading DataRam Content from file...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'testBench_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 729.191 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 804.898 ; gain = 0.000
 current_wave_config {Untitled 3}
 Untitled 3
 add_wave {{/testBench/RV32Core1/Instr}} 
-current_wave_config {Untitled 3}
-Untitled 3
-add_wave {{/testBench/RV32Core1/csrALU1}} 
 restart
 INFO: [Simtcl 6-17] Simulation restarted
 run all
@@ -443,1496 +404,8 @@ Saving DataRam Content to file...
 Saving InstRam Content to file...
 Simulation Ended!
 $stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-current_wave_config {Untitled 3}
-Untitled 3
-add_wave {{/testBench/RV32Core1/BranchDecisionMaking1}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-restart: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 729.719 ; gain = 0.000
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-current_wave_config {Untitled 3}
-Untitled 3
-add_wave {{/testBench/RV32Core1/ALU1}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-restart: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 762.207 ; gain = 0.000
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 784.645 ; gain = 0.000
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj testBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-ERROR: [VRFC 10-1280] procedural assignment to a non-register csrSrcD is not permitted, left-hand side should be reg/integer/time/genvar [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v:94]
-ERROR: [VRFC 10-2989] 'csrreg_write_dataE' is not declared [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v:124]
-ERROR: [VRFC 10-2865] module 'EXSegReg' ignored due to previous errors [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v:17]
-INFO: [VRFC 10-311] analyzing module csrAddrex
-ERROR: [VRFC 10-2865] module 'csrAddrex' ignored due to previous errors [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v:154]
-INFO: [VRFC 10-311] analyzing module csrex
-ERROR: [VRFC 10-2865] module 'csrex' ignored due to previous errors [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v:172]
-INFO: [VRFC 10-311] analyzing module csrDex
-ERROR: [VRFC 10-2865] module 'csrDex' ignored due to previous errors [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v:191]
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-99] Step results log file:'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim/xvlog.log'
-ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim/xvlog.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj testBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-ERROR: [VRFC 10-1280] procedural assignment to a non-register csrSrcD is not permitted, left-hand side should be reg/integer/time/genvar [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v:94]
-ERROR: [VRFC 10-2865] module 'EXSegReg' ignored due to previous errors [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v:17]
-INFO: [VRFC 10-311] analyzing module csrAddrex
-ERROR: [VRFC 10-2865] module 'csrAddrex' ignored due to previous errors [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v:153]
-INFO: [VRFC 10-311] analyzing module csrex
-ERROR: [VRFC 10-2865] module 'csrex' ignored due to previous errors [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v:171]
-INFO: [VRFC 10-311] analyzing module csrDex
-ERROR: [VRFC 10-2865] module 'csrDex' ignored due to previous errors [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v:190]
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-99] Step results log file:'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim/xvlog.log'
-ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim/xvlog.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj testBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-311] analyzing module csrAddrex
-INFO: [VRFC 10-311] analyzing module csrex
-INFO: [VRFC 10-311] analyzing module csrDex
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-311] analyzing module csrDid
-INFO: [VRFC 10-311] analyzing module csrAddrid
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEMSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NPC_Generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-311] analyzing module CSRRegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-ERROR: [VRFC 10-1280] procedural assignment to a non-register csrreg_write_dataW is not permitted, left-hand side should be reg/integer/time/genvar [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v:83]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register csrreg_write_dataW is not permitted, left-hand side should be reg/integer/time/genvar [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v:97]
-ERROR: [VRFC 10-2865] module 'WBSegReg' ignored due to previous errors [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v:40]
-INFO: [VRFC 10-311] analyzing module csrDwb
-ERROR: [VRFC 10-2865] module 'csrDwb' ignored due to previous errors [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v:129]
-INFO: [VRFC 10-311] analyzing module csrAddrwb
-ERROR: [VRFC 10-2865] module 'csrAddrwb' ignored due to previous errors [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v:147]
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-99] Step results log file:'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim/xvlog.log'
-ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim/xvlog.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj testBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-311] analyzing module csrAddrex
-INFO: [VRFC 10-311] analyzing module csrex
-INFO: [VRFC 10-311] analyzing module csrDex
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-311] analyzing module csrDid
-INFO: [VRFC 10-311] analyzing module csrAddrid
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEMSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NPC_Generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-311] analyzing module CSRRegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-311] analyzing module csrDwb
-INFO: [VRFC 10-311] analyzing module csrAddrwb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module testBench
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xelab -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v:62]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:192]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:256]
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.CSRRegisterFile
-Compiling module xil_defaultlib.csrALU
-Compiling module xil_defaultlib.NPC_Generator
-Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionRam
-Compiling module xil_defaultlib.IDSegReg
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.EXSegReg
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.BranchDecisionMaking
-Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.DataRam
-Compiling module xil_defaultlib.WBSegReg
-Compiling module xil_defaultlib.DataExt
-Compiling module xil_defaultlib.HarzardUnit
-Compiling module xil_defaultlib.RV32Core
-Compiling module xil_defaultlib.testBench
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 77. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 91. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 102. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 116. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot testBench_behav
-
-****** Webtalk v2019.1 (64-bit)
-  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
-  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
-
-source D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim/xsim.dir/testBench_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim/xsim.dir/testBench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun May  9 11:10:46 2021. For additional details about this file, please refer to the WebTalk help file at D:/XIlinx/Vivado/2019.1/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Sun May  9 11:10:46 2021...
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 784.645 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "testBench_behav -key {Behavioral:sim_1:Functional:testBench} -tclbatch {testBench.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source testBench.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Initialing reg values...
-Loading DataRam Content from file...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'testBench_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 784.645 ; gain = 0.000
-current_wave_config {Untitled 4}
-Untitled 4
-add_wave {{/testBench/RV32Core1/Instr}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-current_wave_config {Untitled 4}
-Untitled 4
-add_wave {{/testBench/RV32Core1/csrALU1}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-current_wave_config {Untitled 4}
-Untitled 4
-add_wave {{/testBench/RV32Core1/BranchDecisionMaking1}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-current_wave_config {Untitled 4}
-Untitled 4
-add_wave {{/testBench/RV32Core1/HarzardUnit1}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-restart: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 857.312 ; gain = 0.035
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-update_compile_order -fileset sources_1
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj testBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-311] analyzing module csrAddrex
-INFO: [VRFC 10-311] analyzing module csrex
-INFO: [VRFC 10-311] analyzing module csrDex
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-311] analyzing module csrDid
-INFO: [VRFC 10-311] analyzing module csrAddrid
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NPC_Generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-311] analyzing module CSRRegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-311] analyzing module csrDwb
-INFO: [VRFC 10-311] analyzing module csrAddrwb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module testBench
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xelab -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v:62]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:192]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:256]
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.CSRRegisterFile
-Compiling module xil_defaultlib.csrALU
-Compiling module xil_defaultlib.NPC_Generator
-Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionRam
-Compiling module xil_defaultlib.IDSegReg
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.EXSegReg
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.BranchDecisionMaking
-Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.DataRam
-Compiling module xil_defaultlib.WBSegReg
-Compiling module xil_defaultlib.DataExt
-Compiling module xil_defaultlib.HarzardUnit
-Compiling module xil_defaultlib.RV32Core
-Compiling module xil_defaultlib.testBench
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 77. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 91. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 102. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 116. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot testBench_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "testBench_behav -key {Behavioral:sim_1:Functional:testBench} -tclbatch {testBench.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source testBench.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Initialing reg values...
-Loading DataRam Content from file...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'testBench_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 873.363 ; gain = 0.000
-current_wave_config {Untitled 5}
-Untitled 5
-add_wave {{/testBench/RV32Core1/csrALU1}} 
-current_wave_config {Untitled 5}
-Untitled 5
-add_wave {{/testBench/RV32Core1/Instr}} 
-current_wave_config {Untitled 5}
-Untitled 5
-add_wave {{/testBench/RV32Core1/BranchDecisionMaking1}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-update_compile_order -fileset sources_1
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj testBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-311] analyzing module csrAddrex
-INFO: [VRFC 10-311] analyzing module csrex
-INFO: [VRFC 10-311] analyzing module csrDex
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-311] analyzing module csrDid
-INFO: [VRFC 10-311] analyzing module csrAddrid
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEMSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NPC_Generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-311] analyzing module CSRRegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-311] analyzing module csrDwb
-INFO: [VRFC 10-311] analyzing module csrAddrwb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module testBench
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xelab -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v:62]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:192]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:256]
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.CSRRegisterFile
-Compiling module xil_defaultlib.csrALU
-Compiling module xil_defaultlib.NPC_Generator
-Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionRam
-Compiling module xil_defaultlib.IDSegReg
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.EXSegReg
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.BranchDecisionMaking
-Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.DataRam
-Compiling module xil_defaultlib.WBSegReg
-Compiling module xil_defaultlib.DataExt
-Compiling module xil_defaultlib.HarzardUnit
-Compiling module xil_defaultlib.RV32Core
-Compiling module xil_defaultlib.testBench
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 77. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 91. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 102. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 116. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot testBench_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "testBench_behav -key {Behavioral:sim_1:Functional:testBench} -tclbatch {testBench.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source testBench.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Initialing reg values...
-Loading DataRam Content from file...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'testBench_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 946.781 ; gain = 0.000
-current_wave_config {Untitled 6}
-Untitled 6
-add_wave {{/testBench/RV32Core1/csrALU1}} 
-current_wave_config {Untitled 6}
-Untitled 6
-add_wave {{/testBench/RV32Core1/BranchDecisionMaking1}} 
-current_wave_config {Untitled 6}
-Untitled 6
-add_wave {{/testBench/RV32Core1/Instr}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 946.781 ; gain = 0.000
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj testBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-311] analyzing module csrAddrex
-INFO: [VRFC 10-311] analyzing module csrex
-INFO: [VRFC 10-311] analyzing module csrDex
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-311] analyzing module csrDid
-INFO: [VRFC 10-311] analyzing module csrAddrid
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEMSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NPC_Generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-311] analyzing module CSRRegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-311] analyzing module csrDwb
-INFO: [VRFC 10-311] analyzing module csrAddrwb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module testBench
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xelab -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v:62]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:192]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:256]
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.CSRRegisterFile
-Compiling module xil_defaultlib.csrALU
-Compiling module xil_defaultlib.NPC_Generator
-Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionRam
-Compiling module xil_defaultlib.IDSegReg
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.EXSegReg
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.BranchDecisionMaking
-Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.DataRam
-Compiling module xil_defaultlib.WBSegReg
-Compiling module xil_defaultlib.DataExt
-Compiling module xil_defaultlib.HarzardUnit
-Compiling module xil_defaultlib.RV32Core
-Compiling module xil_defaultlib.testBench
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 77. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 91. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 102. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 116. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot testBench_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "testBench_behav -key {Behavioral:sim_1:Functional:testBench} -tclbatch {testBench.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source testBench.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Initialing reg values...
-Loading DataRam Content from file...
-WARNING: file D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.data could not be opened
-Failed to Open D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.data, Do Not Load DataRam values from file!
-Loading InstRam Content from file...
-WARNING: file D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.inst could not be opened
-Failed to Open D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.inst, Do Not Load InstRam values from file!
-Start Instruction Execution!
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'testBench_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 946.781 ; gain = 0.000
-current_wave_config {Untitled 7}
-Untitled 7
-add_wave {{/testBench/RV32Core1/Instr}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-WARNING: file D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.data could not be opened
-Failed to Open D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.data, Do Not Load DataRam values from file!
-Loading InstRam Content from file...
-WARNING: file D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.inst could not be opened
-Failed to Open D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.inst, Do Not Load InstRam values from file!
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 432838 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj testBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-311] analyzing module csrAddrex
-INFO: [VRFC 10-311] analyzing module csrex
-INFO: [VRFC 10-311] analyzing module csrDex
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-311] analyzing module csrDid
-INFO: [VRFC 10-311] analyzing module csrAddrid
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEMSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NPC_Generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-311] analyzing module CSRRegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-311] analyzing module csrDwb
-INFO: [VRFC 10-311] analyzing module csrAddrwb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module testBench
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xelab -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v:62]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:192]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:256]
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.CSRRegisterFile
-Compiling module xil_defaultlib.csrALU
-Compiling module xil_defaultlib.NPC_Generator
-Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionRam
-Compiling module xil_defaultlib.IDSegReg
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.EXSegReg
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.BranchDecisionMaking
-Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.DataRam
-Compiling module xil_defaultlib.WBSegReg
-Compiling module xil_defaultlib.DataExt
-Compiling module xil_defaultlib.HarzardUnit
-Compiling module xil_defaultlib.RV32Core
-Compiling module xil_defaultlib.testBench
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 77. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 91. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 102. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 116. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot testBench_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "testBench_behav -key {Behavioral:sim_1:Functional:testBench} -tclbatch {testBench.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source testBench.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Initialing reg values...
-Loading DataRam Content from file...
-WARNING: file D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.data could not be opened
-Failed to Open D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.data, Do Not Load DataRam values from file!
-Loading InstRam Content from file...
-WARNING: file D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.inst could not be opened
-Failed to Open D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.inst, Do Not Load InstRam values from file!
-Start Instruction Execution!
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'testBench_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 946.781 ; gain = 0.000
-current_wave_config {Untitled 8}
-Untitled 8
-add_wave {{/testBench/RV32Core1/RegisterFile1}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-WARNING: file D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.data could not be opened
-Failed to Open D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.data, Do Not Load DataRam values from file!
-Loading InstRam Content from file...
-WARNING: file D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.inst could not be opened
-Failed to Open D:\USTC\CA2021_labs\lab2\lab2.srcs\sim_1\imports\Simulation\1RtestALL.inst, Do Not Load InstRam values from file!
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 432838 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj testBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-311] analyzing module csrAddrex
-INFO: [VRFC 10-311] analyzing module csrex
-INFO: [VRFC 10-311] analyzing module csrDex
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-311] analyzing module csrDid
-INFO: [VRFC 10-311] analyzing module csrAddrid
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEMSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NPC_Generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-311] analyzing module CSRRegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-311] analyzing module csrDwb
-INFO: [VRFC 10-311] analyzing module csrAddrwb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module testBench
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xelab -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v:62]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:192]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:256]
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.CSRRegisterFile
-Compiling module xil_defaultlib.csrALU
-Compiling module xil_defaultlib.NPC_Generator
-Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionRam
-Compiling module xil_defaultlib.IDSegReg
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.EXSegReg
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.BranchDecisionMaking
-Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.DataRam
-Compiling module xil_defaultlib.WBSegReg
-Compiling module xil_defaultlib.DataExt
-Compiling module xil_defaultlib.HarzardUnit
-Compiling module xil_defaultlib.RV32Core
-Compiling module xil_defaultlib.testBench
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 77. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 91. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 102. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 116. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot testBench_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "testBench_behav -key {Behavioral:sim_1:Functional:testBench} -tclbatch {testBench.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source testBench.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Initialing reg values...
-Loading DataRam Content from file...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'testBench_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 946.781 ; gain = 0.000
-current_wave_config {Untitled 9}
-Untitled 9
-add_wave {{/testBench/RV32Core1/RegisterFile1}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-run: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 946.781 ; gain = 0.000
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj testBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-311] analyzing module csrAddrex
-INFO: [VRFC 10-311] analyzing module csrex
-INFO: [VRFC 10-311] analyzing module csrDex
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-311] analyzing module csrDid
-INFO: [VRFC 10-311] analyzing module csrAddrid
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEMSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NPC_Generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-311] analyzing module CSRRegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-311] analyzing module csrDwb
-INFO: [VRFC 10-311] analyzing module csrAddrwb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module testBench
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xelab -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v:62]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:192]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:256]
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.CSRRegisterFile
-Compiling module xil_defaultlib.csrALU
-Compiling module xil_defaultlib.NPC_Generator
-Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionRam
-Compiling module xil_defaultlib.IDSegReg
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.EXSegReg
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.BranchDecisionMaking
-Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.DataRam
-Compiling module xil_defaultlib.WBSegReg
-Compiling module xil_defaultlib.DataExt
-Compiling module xil_defaultlib.HarzardUnit
-Compiling module xil_defaultlib.RV32Core
-Compiling module xil_defaultlib.testBench
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 77. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 91. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 102. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 116. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot testBench_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "testBench_behav -key {Behavioral:sim_1:Functional:testBench} -tclbatch {testBench.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source testBench.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Initialing reg values...
-Loading DataRam Content from file...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'testBench_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 946.781 ; gain = 0.000
-current_wave_config {Untitled 10}
-Untitled 10
-add_wave {{/testBench/RV32Core1/Instr}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-run: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 946.781 ; gain = 0.000
-current_wave_config {Untitled 10}
-Untitled 10
-add_wave {{/testBench/RV32Core1/RegisterFile1}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 946.781 ; gain = 0.000
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj testBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-311] analyzing module csrAddrex
-INFO: [VRFC 10-311] analyzing module csrex
-INFO: [VRFC 10-311] analyzing module csrDex
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-311] analyzing module csrDid
-INFO: [VRFC 10-311] analyzing module csrAddrid
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEMSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NPC_Generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-311] analyzing module CSRRegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-311] analyzing module csrDwb
-INFO: [VRFC 10-311] analyzing module csrAddrwb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module testBench
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xelab -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v:62]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:192]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:256]
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.CSRRegisterFile
-Compiling module xil_defaultlib.csrALU
-Compiling module xil_defaultlib.NPC_Generator
-Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionRam
-Compiling module xil_defaultlib.IDSegReg
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.EXSegReg
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.BranchDecisionMaking
-Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.DataRam
-Compiling module xil_defaultlib.WBSegReg
-Compiling module xil_defaultlib.DataExt
-Compiling module xil_defaultlib.HarzardUnit
-Compiling module xil_defaultlib.RV32Core
-Compiling module xil_defaultlib.testBench
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 77. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 91. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 102. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 116. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot testBench_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "testBench_behav -key {Behavioral:sim_1:Functional:testBench} -tclbatch {testBench.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source testBench.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Initialing reg values...
-Loading DataRam Content from file...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'testBench_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 946.781 ; gain = 0.000
-current_wave_config {Untitled 11}
-Untitled 11
-add_wave {{/testBench/RV32Core1/Instr}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-run: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 946.781 ; gain = 0.000
-current_wave_config {Untitled 11}
-Untitled 11
-add_wave {{/testBench/RV32Core1/RegisterFile1}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 946.781 ; gain = 0.000
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj testBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-311] analyzing module csrALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-311] analyzing module csrAddrex
-INFO: [VRFC 10-311] analyzing module csrex
-INFO: [VRFC 10-311] analyzing module csrDex
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-311] analyzing module csrDid
-INFO: [VRFC 10-311] analyzing module csrAddrid
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionRam
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEMSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NPC_Generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-311] analyzing module CSRRegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-311] analyzing module csrDwb
-INFO: [VRFC 10-311] analyzing module csrAddrwb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module testBench
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-"xelab -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v:62]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'AluContrlD' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:192]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'AluContrlE' [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:256]
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.CSRRegisterFile
-Compiling module xil_defaultlib.csrALU
-Compiling module xil_defaultlib.NPC_Generator
-Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionRam
-Compiling module xil_defaultlib.IDSegReg
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.EXSegReg
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.BranchDecisionMaking
-Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.DataRam
-Compiling module xil_defaultlib.WBSegReg
-Compiling module xil_defaultlib.DataExt
-Compiling module xil_defaultlib.HarzardUnit
-Compiling module xil_defaultlib.RV32Core
-Compiling module xil_defaultlib.testBench
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 77. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 91. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 102. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 116. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot testBench_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "testBench_behav -key {Behavioral:sim_1:Functional:testBench} -tclbatch {testBench.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source testBench.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Initialing reg values...
-Loading DataRam Content from file...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'testBench_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 946.781 ; gain = 0.000
-current_wave_config {Untitled 12}
-Untitled 12
-add_wave {{/testBench/RV32Core1/Instr}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-Initialing reg values...
-Loading DataRam Content from file...
-Loading InstRam Content from file...
-Start Instruction Execution!
-Finish Instruction Execution!
-Saving DataRam Content to file...
-Saving InstRam Content to file...
-Simulation Ended!
-$stop called at time : 449238 ns : File "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" Line 172
-run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 946.781 ; gain = 0.000
+run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 820.301 ; gain = 0.000
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Sun May  9 11:43:56 2021...
+INFO: [Common 17-206] Exiting Vivado at Sun May  9 15:35:19 2021...

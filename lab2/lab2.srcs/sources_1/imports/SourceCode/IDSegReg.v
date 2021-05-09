@@ -56,8 +56,8 @@ always@(posedge clk)
 
 wire [31: 0] RD_raw;
 InstructionRam InstructionRamInst (
-                   .clk (clk),                         //请完善代码
-                   .addra (A[31: 2]),                         //请完善代码
+                   .clk (clk),                          //请完善代码
+                   .addra (A[31: 2]),                          //请完善代码
                    .douta ( RD_raw ),
                    .web ( WE2 ),
                    .addrb ( A2[31: 2] ),
@@ -79,43 +79,5 @@ begin
     RD_old <= RD_raw;
 end
 assign RD = stall_ff ? RD_old : (clear_ff ? 32'b0 : RD_raw );
-
-endmodule
-
-
-module csrDid(
-    input wire clk, bubbleE, flushE, 
-    input wire [31:0] csrRegid, 
-    output reg [31:0] csrRegex    
-);
-
-initial csrRegex = 0;
-
-always @ (posedge clk)
-    if(!bubbleE)
-    begin
-        if(flushE)
-            csrRegex <= 0;
-        else 
-            csrRegex <= csrRegid;
-    end
-
-endmodule
-module csrAddrid(
-    input wire clk, bubbleE, flushE, 
-    input wire [11:0] csrAid, 
-    output reg [11:0] csrAex    
-);
-
-initial csrAex = 0;
-
-always @ (posedge clk)
-    if(!bubbleE)
-    begin
-        if(flushE)
-            csrAex <= 0;
-        else 
-            csrAex <= csrAid;
-    end
 
 endmodule

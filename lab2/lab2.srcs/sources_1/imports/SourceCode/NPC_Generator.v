@@ -39,6 +39,4 @@ always @( * ) begin
     else
         PC_In <= PCF + 32'h4;
 end
-// 请补全此处代码
-
 endmodule

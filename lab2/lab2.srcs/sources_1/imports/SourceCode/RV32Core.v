@@ -87,47 +87,47 @@ wire MemToRegW;
 wire [1: 0] Forward1E;
 wire [1: 0] Forward2E;
 wire [1: 0] LoadedBytesSelect;
-wire csrreg_write_enD;
-wire csrreg_write_enE;
-wire csrreg_write_enM;
-wire [2:0] csrALU_funcD;
-wire [2:0] csrALU_funcE;
-wire csrwb_selectD;
-wire csrwb_selectE;
-wire csrwb_selectM;
-wire csrwb_selectW;
-wire csrreg_write_enW;
-wire [11:0] csrreg_write_addrW;
-wire [11:0] csrreg_write_addrE;
-wire [11:0] csrreg_write_addrD;
-wire [11:0] csrSrcW;
-wire [11:0] csrSrcE;
-wire [11:0] csrSrcM;
-assign csrreg_write_addrD=Instr[31:0];
-wire [11:0] csrreg_write_addrM;
-wire [31:0] csrreg_write_dataW;
-wire [31:0] csrreg_write_dataM;
-wire [31:0] csrregOutD;
-wire [31:0] csrregOutE;
-wire [31:0] csrALU_out;
+wire CSRreg_write_enD;
+wire CSRreg_write_enE;
+wire CSRreg_write_enM;
+wire [2: 0] CSRALU_funcD;
+wire [2: 0] CSRALU_funcE;
+wire CSRwb_selectD;
+wire CSRwb_selectE;
+wire CSRwb_selectM;
+wire CSRwb_selectW;
+wire CSRreg_write_enW;
+wire [11: 0] CSRreg_write_addrW;
+wire [11: 0] CSRreg_write_addrE;
+wire [11: 0] CSRreg_write_addrD;
+wire [11: 0] CSRSrcW;
+wire [11: 0] CSRSrcE;
+wire [11: 0] CSRSrcM;
+assign CSRreg_write_addrD = Instr[31: 0];
+wire [11: 0] CSRreg_write_addrM;
+wire [31: 0] CSRreg_write_dataW;
+wire [31: 0] CSRreg_write_dataM;
+wire [31: 0] CSRregOutD;
+wire [31: 0] CSRregOutE;
+wire [31: 0] CSRALU_out;
 CSRRegisterFile CSRRegisterFile1(
-    .clk(CPU_CLK), 
-    .rst(CPU_RST), 
-    .write_en(csrreg_write_enW), 
-    .addr(Instr[31:20]),
-    .wb_addr(csrSrcW),
-    .wb_data(csrreg_write_dataW),
-    .csrreg(csrregOutD)
-);
-wire [1:0] Forwardcsr;
-wire [31:0] csrregOutE_ALU=Forwardcsr[1]?(csrreg_write_dataM):(Forwardcsr[0]?csrreg_write_dataW:csrregOutE);
-csrALU csrALU1(
-    .op1(Operand1),
-    .op2(csrregOutE_ALU),
-    .op3(Rs1E),
-    .csrALU_func(csrALU_funcE),
-    .ALU_out(csrALU_out)
-    );
+                    .clk(CPU_CLK),
+                    .rst(CPU_RST),
+                    .write_en(CSRreg_write_enW),
+                    .addr(Instr[31: 20]),
+                    .wb_addr(CSRSrcW),
+                    .wb_data(CSRreg_write_dataW),
+                    .CSRreg(CSRregOutD)
+                );
+wire [1: 0] ForwardCSR;
+wire [31: 0] CSRregOutE_ALU = ForwardCSR[1] ? (CSRreg_write_dataM) : (ForwardCSR[0] ? CSRreg_write_dataW : CSRregOutE);
+CSRALU CSRALU1(
+           .op1(Operand1),
+           .op2(CSRregOutE_ALU),
+           .op3(Rs1E),
+           .CSRALU_func(CSRALU_funcE),
+           .ALU_out(CSRALU_out)
+       );
 //wire values assignments
 assign {Funct7D, Rs2D, Rs1D, Funct3D, RdD, OpCodeD} = Instr;
 assign JalNPC = ImmD + PCD;
@@ -193,9 +193,9 @@ ControlUnit ControlUnit1(
                 .AluSrc1D(AluSrc1D),
                 .AluSrc2D(AluSrc2D),
                 .ImmType(ImmType),
-                .csrreg_write_en(csrreg_write_enD),
-.csrALU_func(csrALU_funcD),
-.csrwb_select(csrwb_selectD)
+                .CSRreg_write_en(CSRreg_write_enD),
+                .CSRALU_func(CSRALU_funcD),
+                .CSRwb_select(CSRwb_selectD)
             );
 
 ImmOperandUnit ImmOperandUnit1(
@@ -258,16 +258,16 @@ EXSegReg EXSegReg1(
              .AluSrc1E(AluSrc1E),
              .AluSrc2D(AluSrc2D),
              .AluSrc2E(AluSrc2E),
-.csrreg_write_enD(csrreg_write_enD),
-.csrreg_write_enE(csrreg_write_enE),
-            .csrALU_funcD(csrALU_funcD),
-           .csrALU_funcE(csrALU_funcE),
-           .csrwb_selectD(csrwb_selectD),
-          .csrwb_selectE(csrwb_selectE),
-           .csrregOutD(csrregOutD),
-            .csrregOutE(csrregOutE),
-            .csrSrcD(Instr[31:20]),
-            .csrSrcE(csrSrcE)
+             .CSRreg_write_enD(CSRreg_write_enD),
+             .CSRreg_write_enE(CSRreg_write_enE),
+             .CSRALU_funcD(CSRALU_funcD),
+             .CSRALU_funcE(CSRALU_funcE),
+             .CSRwb_selectD(CSRwb_selectD),
+             .CSRwb_selectE(CSRwb_selectE),
+             .CSRregOutD(CSRregOutD),
+             .CSRregOutE(CSRregOutE),
+             .CSRSrcD(Instr[31: 20]),
+             .CSRSrcE(CSRSrcE)
          );
 
 ALU ALU1(
@@ -307,13 +307,13 @@ MEMSegReg MEMSegReg1(
               .MemWriteM(MemWriteM),
               .LoadNpcE(LoadNpcE),
               .LoadNpcM(LoadNpcM),
-              .csrreg_write_enE(csrreg_write_enE),
-              .csrreg_write_enM(csrreg_write_enM),
-              .csrregOutE(csrregOutE_ALU),
-              .csrSrcE(csrSrcE),
-              .csrSrcM(csrSrcM),
-              .csrALU_out(csrALU_out),
-              .csrreg_write_dataM(csrreg_write_dataM)
+              .CSRreg_write_enE(CSRreg_write_enE),
+              .CSRreg_write_enM(CSRreg_write_enM),
+              .CSRregOutE(CSRregOutE_ALU),
+              .CSRSrcE(CSRSrcE),
+              .CSRSrcM(CSRSrcM),
+              .CSRALU_out(CSRALU_out),
+              .CSRreg_write_dataM(CSRreg_write_dataM)
           );
 
 // ---------------------------------------------
@@ -340,12 +340,12 @@ WBSegReg WBSegReg1(
              .RegWriteW(RegWriteW),
              .MemToRegM(MemToRegM),
              .MemToRegW(MemToRegW),
-             .csrSrcM(csrSrcM),
-             .csrSrcW(csrSrcW),
-             .csrreg_write_enM(csrreg_write_enM),
-             .csrreg_write_enW(csrreg_write_enW),
-             .csrreg_write_dataM(csrreg_write_dataM),
-             .csrreg_write_dataW(csrreg_write_dataW)
+             .CSRSrcM(CSRSrcM),
+             .CSRSrcW(CSRSrcW),
+             .CSRreg_write_enM(CSRreg_write_enM),
+             .CSRreg_write_enW(CSRreg_write_enW),
+             .CSRreg_write_dataM(CSRreg_write_dataM),
+             .CSRreg_write_dataW(CSRreg_write_dataW)
          );
 
 DataExt DataExt1(
@@ -387,13 +387,13 @@ HarzardUnit HarzardUnit1(
                 .FlushW(FlushW),
                 .Forward1E(Forward1E),
                 .Forward2E(Forward2E),
-                .csrreg_write_enM(csrreg_write_enM),
-                .csrreg_write_enW(csrreg_write_enW),
-                .csrreg_write_enE(csrreg_write_enE),
-                .csrSrcM(csrSrcM),
-                .csrSrcW(csrSrcW),
-                .csrSrcE(csrSrcE),
-                .Forwardcsr(Forwardcsr)
+                .CSRreg_write_enM(CSRreg_write_enM),
+                .CSRreg_write_enW(CSRreg_write_enW),
+                .CSRreg_write_enE(CSRreg_write_enE),
+                .CSRSrcM(CSRSrcM),
+                .CSRSrcW(CSRSrcW),
+                .CSRSrcE(CSRSrcE),
+                .ForwardCSR(ForwardCSR)
             );
 
 endmodule

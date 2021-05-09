@@ -11,7 +11,7 @@ Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.CSRRegisterFile
-Compiling module xil_defaultlib.csrALU
+Compiling module xil_defaultlib.CSRALU
 Compiling module xil_defaultlib.NPC_Generator
 Compiling module xil_defaultlib.IFSegReg
 Compiling module xil_defaultlib.InstructionRam

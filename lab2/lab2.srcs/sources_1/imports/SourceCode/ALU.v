@@ -10,10 +10,10 @@
 // Description: ALU unit of RISCV CPU
 //////////////////////////////////////////////////////////////////////////////////
 
-//功能和接口说明
+//功能和接口说�?
 //ALU接受两个操作数，根据AluContrl的不同，进行不同的计算操作，将计算结果输出到AluOut
-//AluContrl的类型定义在Parameters.v中
-//推荐格式：
+//AluContrl的类型定义在Parameters.v�?
+//推荐格式�?
 //case()
 //    `ADD:        AluOut<=Operand1 + Operand2;
 //   	.......
@@ -63,26 +63,30 @@ end
 
 endmodule
 
-module csrALU(
-    input wire [31:0] op1,
-    input wire [31:0] op2,
-    input wire [4:0] op3,
-    input wire [2:0] csrALU_func,
-    output reg [31:0] ALU_out
+    module CSRALU(
+        input wire [31: 0] op1,
+        input wire [31: 0] op2,
+        input wire [4: 0] op3,
+        input wire [2: 0] CSRALU_func,
+        output reg [31: 0] ALU_out
     );
-    //wire [31:0] op3_extend;
-    //assign op3_extend = {27'd0, op3};
-    // TODO: Complete this module
-    always @ (*)
-        begin
-            case (csrALU_func)
-                `CSRRW:     ALU_out <= op1 ;
-                `CSRRS:     ALU_out <= op1 | op2;
-                `CSRRC:     ALU_out <= (~op1) & op2;
-                `CSRRWI:    ALU_out <= {27'd0, op3};
-                `CSRRSI:    ALU_out <= op2 | {27'd0, op3};
-                `CSRRCI:    ALU_out <= op2 & ~{27'd0, op3};
-                default:    ALU_out <= 32'd0;
-            endcase
-        end
+always @ ( * )
+begin
+    case (CSRALU_func)
+        `CSRRW:
+            ALU_out <= op1 ;
+        `CSRRS:
+            ALU_out <= op1 | op2;
+        `CSRRC:
+            ALU_out <= (~op1) & op2;
+        `CSRRWI:
+            ALU_out <= {27'd0, op3};
+        `CSRRSI:
+            ALU_out <= op2 | {27'd0, op3};
+        `CSRRCI:
+            ALU_out <= op2 & ~{27'd0, op3};
+        default:
+            ALU_out <= 32'd0;
+    endcase
+end
 endmodule
