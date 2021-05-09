@@ -2,10 +2,10 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sat May  8 09:33:03 2021
-# Process ID: 11528
+# Start of session at: Sat May  8 22:24:27 2021
+# Process ID: 4584
 # Current directory: D:/USTC/CA2021_labs/lab2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13836 D:\USTC\CA2021_labs\lab2\lab2.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9212 D:\USTC\CA2021_labs\lab2\lab2.xpr
 # Log file: D:/USTC/CA2021_labs/lab2/vivado.log
 # Journal file: D:/USTC/CA2021_labs/lab2\vivado.jou
 #-----------------------------------------------------------
@@ -13,46 +13,29 @@ start_gui
 open_project D:/USTC/CA2021_labs/lab2/lab2.xpr
 update_compile_order -fileset sources_1
 launch_simulation
-launch_simulation
-launch_simulation
 source testBench.tcl
 current_wave_config {Untitled 1}
-add_wave {{/testBench/RV32Core1/RegisterFile1/RegFile[3]}} 
-restart
-run all
-current_wave_config {Untitled 1}
-add_wave {{/testBench/CPU_Debug_DataRAM_A2[2]}} 
-restart
-run all
-current_wave_config {Untitled 1}
-add_wave {{/testBench/RV32Core1/RegisterFile1/RegFile[2]}} 
-restart
-run all
-current_wave_config {Untitled 1}
-add_wave {{/testBench/RV32Core1/NPC_Generator1}} 
+add_wave {{/testBench/RV32Core1/RegisterFile1}} 
 restart
 run all
 close_sim
 launch_simulation
 source testBench.tcl
 current_wave_config {Untitled 2}
-add_wave {{/testBench/RV32Core1/NPC_Generator1}} 
-restart
-run all
-current_wave_config {Untitled 2}
-add_wave {{/testBench/RV32Core1/ControlUnit1}} 
+add_wave {{/testBench/RV32Core1/RegisterFile1}} 
 restart
 run all
 current_wave_config {Untitled 2}
 add_wave {{/testBench/RV32Core1/Instr}} 
 restart
 run all
-restart
 close_sim
 launch_simulation
 source testBench.tcl
+current_wave_config {Untitled 3}
+add_wave {{/testBench/RV32Core1/Instr}} 
 current_wave_config {Untitled 3}
-add_wave {{/testBench/RV32Core1/Instr}} 
+add_wave {{/testBench/RV32Core1/RegisterFile1}} 
 restart
 run all
 close_sim
@@ -63,15 +46,20 @@ add_wave {{/testBench/RV32Core1/Instr}}
 restart
 run all
 current_wave_config {Untitled 4}
-add_wave {{/testBench/RV32Core1/NPC_Generator1}} 
+add_wave {{/testBench/RV32Core1/RegisterFile1}} 
 restart
 run all
 current_wave_config {Untitled 4}
-add_wave {{/testBench/RV32Core1/BranchDecisionMaking1}} 
+add_wave {{/testBench/RV32Core1/csrALU1}} 
 restart
 run all
-current_wave_config {Untitled 4}
-add_wave {{/testBench/RV32Core1/ALU1}} 
+close_sim
+launch_simulation
+source testBench.tcl
+current_wave_config {Untitled 5}
+add_wave {{/testBench/RV32Core1/Instr}} 
+current_wave_config {Untitled 5}
+add_wave {{/testBench/RV32Core1/RegisterFile1}} 
 restart
 run all
 close_sim

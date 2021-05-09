@@ -63,3 +63,26 @@ end
 
 endmodule
 
+module csrALU(
+    input wire [31:0] op1,
+    input wire [31:0] op2,
+    input wire [4:0] op3,
+    input wire [2:0] csrALU_func,
+    output reg [31:0] ALU_out
+    );
+    //wire [31:0] op3_extend;
+    //assign op3_extend = {27'd0, op3};
+    // TODO: Complete this module
+    always @ (*)
+        begin
+            case (csrALU_func)
+                `CSRRW:     ALU_out <= op1 ;
+                `CSRRS:     ALU_out <= op1 | op2;
+                `CSRRC:     ALU_out <= (~op1) & op2;
+                `CSRRWI:    ALU_out <= {27'd0, op3};
+                `CSRRSI:    ALU_out <= op2 | {27'd0, op3};
+                `CSRRCI:    ALU_out <= op2 & ~{27'd0, op3};
+                default:    ALU_out <= 32'd0;
+            endcase
+        end
+endmodule

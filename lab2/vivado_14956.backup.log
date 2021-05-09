@@ -1,0 +1,90 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat May  8 22:05:11 2021
+# Process ID: 14956
+# Current directory: D:/USTC/CA2021_labs/lab2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16540 D:\USTC\CA2021_labs\lab2\lab2.xpr
+# Log file: D:/USTC/CA2021_labs/lab2/vivado.log
+# Journal file: D:/USTC/CA2021_labs/lab2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/USTC/CA2021_labs/lab2/lab2.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/XIlinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:11 . Memory (MB): peak = 705.891 ; gain = 106.879
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'testBench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testBench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataExt
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/DataRam.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataRam
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EXSegReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HarzardUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IDSegReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IFSegReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImmOperandUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionRam
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEMSegReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NPC_Generator
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RV32Core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WBSegReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testBench
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim'
+"xelab -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7c2ed57eb68a4c79ba1d53deef50195e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testBench_behav xil_defaultlib.testBench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-2063] Module <CSRRegisterFile> not found while processing module instance <CSRRegisterFile1> [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:173]
+ERROR: [VRFC 10-2063] Module <csrDid> not found while processing module instance <csrDid1> [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:183]
+ERROR: [VRFC 10-2063] Module <csrAddrid> not found while processing module instance <csrAddrid1> [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:191]
+ERROR: [VRFC 10-2063] Module <csrALU> not found while processing module instance <csrALU1> [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:198]
+ERROR: [VRFC 10-2063] Module <csrex> not found while processing module instance <csrex1> [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:205]
+ERROR: [VRFC 10-2063] Module <csrDex> not found while processing module instance <csrDex1> [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:212]
+ERROR: [VRFC 10-2063] Module <csrAddrex> not found while processing module instance <csrAddrex1> [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:220]
+ERROR: [VRFC 10-2063] Module <csrDwb> not found while processing module instance <csrDwb1> [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:227]
+ERROR: [VRFC 10-2063] Module <csrAddrwb> not found while processing module instance <csrAddrwb1> [D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RV32Core.v:235]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'D:/USTC/CA2021_labs/lab2/lab2.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 740.359 ; gain = 9.703
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat May  8 22:24:17 2021...

@@ -55,7 +55,17 @@ module EXSegReg(
            input wire AluSrc1D,
            output reg AluSrc1E,
            input wire [1: 0] AluSrc2D,
-           output reg [1: 0] AluSrc2E
+           output reg [1: 0] AluSrc2E,
+           input wire csrreg_write_enD,
+           output reg csrreg_write_enE,
+            input wire [2:0] csrALU_funcD,
+           output reg [2:0]csrALU_funcE,
+           input wire csrwb_selectD,
+           output reg csrwb_selectE,
+           input wire [31:0] csrregOutD,
+            output reg [31:0] csrregOutE,
+            input wire [11:0] csrSrcD,
+            output reg [11:0] csrSrcE
        );
 initial
 begin
@@ -77,6 +87,11 @@ begin
     AluContrlE = 5'b0;
     AluSrc1E = 1'b0;
     AluSrc2E = 2'b0;
+          csrreg_write_enE=1'b0;
+           csrALU_funcE=3'b0;
+           csrwb_selectE=1'b0;
+            csrregOutE=32'b0;
+            csrSrcE=12'b0;
 end
 //
 always@(posedge clk) begin
@@ -101,6 +116,11 @@ always@(posedge clk) begin
             AluContrlE <= 5'b0;
             AluSrc1E <= 1'b0;
             AluSrc2E <= 2'b0;
+                      csrreg_write_enE<=1'b0;
+           csrALU_funcE<=3'b0;
+           csrwb_selectE<=1'b0;
+            csrregOutE<=32'b0;
+            csrSrcE=12'b0;
         end else
         begin
             PCE <= PCD;
@@ -121,7 +141,67 @@ always@(posedge clk) begin
             AluContrlE <= AluContrlD;
             AluSrc1E <= AluSrc1D;
             AluSrc2E <= AluSrc2D;
+            csrreg_write_enE<=csrreg_write_enD;
+           csrALU_funcE<=csrALU_funcD;
+           csrwb_selectE<=csrwb_selectD;
+            csrregOutE<=csrregOutD;
+            csrSrcE<=csrSrcD;
         end
 end
 
+endmodule
+module csrAddrex(
+    input wire clk, bubbleM, flushM,
+    input wire [11:0] csrAex,
+    output reg [11:0] csrAmem
+    );
+
+    initial csrAmem = 0;
+    
+    always@(posedge clk)
+        if (!bubbleM) 
+        begin
+            if (flushM)
+                csrAmem <= 0;
+            else 
+                csrAmem <= csrAex;
+        end
+    
+endmodule
+module csrex(
+    input wire clk, bubbleM, flushM,
+    input wire [31:0] csrRegex,
+    output reg [31:0] csrRegmem1
+    );
+
+    initial csrRegmem1 = 0;
+    
+    always@(posedge clk)
+        if (!bubbleM) 
+        begin
+            if (flushM)
+                csrRegmem1 <= 0;
+            else 
+                csrRegmem1 <= csrRegex;
+        end
+    
+endmodule
+
+module csrDex(
+    input wire clk, bubbleM, flushM,
+    input wire [31:0] csrALU_out,
+    output reg [31:0] csrRegmem2
+    );
+
+    initial csrRegmem2 = 0;
+    
+    always@(posedge clk)
+        if (!bubbleM) 
+        begin
+            if (flushM)
+                csrRegmem2 <= 0;
+            else 
+                csrRegmem2 <= csrALU_out;
+        end
+    
 endmodule

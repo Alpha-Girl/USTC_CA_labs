@@ -50,4 +50,11 @@
     `define LW  3'd3			//	write 32bit to Register
     `define LBU  3'd4			//	load 8bit from Mem then unsigned extended to 32bit
     `define LHU  3'd5			//	load 16bit from Mem then unsigned extended to 32bit
+// csrALU_func[2:0]
+    `define CSRRW   3'd0
+    `define CSRRS   3'd1
+    `define CSRRC   3'd2
+    `define CSRRWI  3'd3
+    `define CSRRSI  3'd4
+    `define CSRRCI  3'd5
 `endif

@@ -18,10 +18,10 @@ Disassembly of section .text:
 00010078 <test_2>:
    10078:	00200193          	li	gp,2
    1007c:	00100093          	li	ra,1
-   10080:	00209073          	fsrm	ra
+   10080:	00209073          	csrrw	ra
    10084:	002c6173          	csrrsi	sp,frm,24
    10088:	02111e63          	bne	sp,ra,100c4 <failed>
-   1008c:	00201173          	fsrm	sp,zero
+   1008c:	00201173          	csrrw	sp,zero
    10090:	01900093          	li	ra,25
    10094:	02111863          	bne	sp,ra,100c4 <failed>
 

@@ -47,8 +47,37 @@ module ControlUnit(
            output reg [3: 0] AluContrlD,
            output wire [1: 0] AluSrc2D,
            output wire AluSrc1D,
-           output reg [2: 0] ImmType
+           output reg [2: 0] ImmType,
+            output reg csrreg_write_en, 
+            output reg [2:0] csrALU_func, 
+            output wire csrwb_select
        );
+       localparam CSR_OP = 7'b111_0011;
+    wire CSRW, CSRS, CSRC, CSRWI, CSRSI, CSRCI; 
+    assign CSRW = (Op == CSR_OP) && (Fn3 == 3'b001); 
+    assign CSRS = (Op == CSR_OP) && (Fn3 == 3'b010); 
+    assign CSRC = (Op == CSR_OP) && (Fn3 == 3'b011); 
+    assign CSRWI = (Op == CSR_OP) && (Fn3 == 3'b101); 
+    assign CSRSI = (Op == CSR_OP) && (Fn3 == 3'b110); 
+    assign CSRCI = (Op == CSR_OP) && (Fn3 == 3'b111);
+    always @ (*)
+        begin
+            if (CSRW)       csrALU_func <= `CSRRW;
+            else if (CSRS)  csrALU_func <= `CSRRS;
+            else if (CSRC)  csrALU_func <= `CSRRC; 
+            else if (CSRWI) csrALU_func <= `CSRRWI;
+            else if (CSRSI) csrALU_func <= `CSRRSI;
+            else if (CSRCI) csrALU_func <= `CSRRCI;
+            else            csrALU_func <= 3'b111;
+        end
+    //------------------- csrwb_select -------------------------
+    assign csrwb_select = (CSRW || CSRS || CSRC || CSRWI || CSRSI || CSRCI) ? 1'b1 : 1'b0;
+        //------------------- csrreg_write_en -------------------------
+    always @ (*)
+        begin 
+            if(CSRW || CSRS || CSRC || CSRWI || CSRCI || CSRSI ) csrreg_write_en <= 1'b1;
+            else csrreg_write_en <= 1'b0; 
+        end
 assign LoadNpcD = JalD | JalrD ;
 assign JalD = (Op == 7'b1101111) ? 1'b1 : 1'b0;
 assign JalrD = (Op == 7'b1100111) ? 1'b1 : 1'b0;
@@ -202,6 +231,11 @@ always @( * ) begin
             MemWriteD<=4'b0000;
             ImmType<=`BTYPE;
             AluContrlD<=`ADD;   
+        end
+        7'b111_0011:
+        begin
+            RegWriteD<=`LW;
+            MemWriteD<=4'b0000;
         end
         default:begin       //无效指令或�?�空指令
             RegWriteD<=`NOREGWRITE;

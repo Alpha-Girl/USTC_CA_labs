@@ -1,5 +1,6 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module csrALU
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module BranchDecisionMaking
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
@@ -10,10 +11,15 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/
 INFO: [VRFC 10-311] analyzing module DataRam
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module EXSegReg
+INFO: [VRFC 10-311] analyzing module csrAddrex
+INFO: [VRFC 10-311] analyzing module csrex
+INFO: [VRFC 10-311] analyzing module csrDex
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module HarzardUnit
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module IDSegReg
+INFO: [VRFC 10-311] analyzing module csrDid
+INFO: [VRFC 10-311] analyzing module csrAddrid
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module IFSegReg
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
@@ -28,7 +34,10 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/
 INFO: [VRFC 10-311] analyzing module RV32Core
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-311] analyzing module CSRRegisterFile
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module WBSegReg
+INFO: [VRFC 10-311] analyzing module csrDwb
+INFO: [VRFC 10-311] analyzing module csrAddrwb
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab2/lab2.srcs/sim_1/imports/Simulation/testBench.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module testBench

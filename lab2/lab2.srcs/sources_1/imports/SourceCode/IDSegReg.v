@@ -81,3 +81,41 @@ end
 assign RD = stall_ff ? RD_old : (clear_ff ? 32'b0 : RD_raw );
 
 endmodule
+
+
+module csrDid(
+    input wire clk, bubbleE, flushE, 
+    input wire [31:0] csrRegid, 
+    output reg [31:0] csrRegex    
+);
+
+initial csrRegex = 0;
+
+always @ (posedge clk)
+    if(!bubbleE)
+    begin
+        if(flushE)
+            csrRegex <= 0;
+        else 
+            csrRegex <= csrRegid;
+    end
+
+endmodule
+module csrAddrid(
+    input wire clk, bubbleE, flushE, 
+    input wire [11:0] csrAid, 
+    output reg [11:0] csrAex    
+);
+
+initial csrAex = 0;
+
+always @ (posedge clk)
+    if(!bubbleE)
+    begin
+        if(flushE)
+            csrAex <= 0;
+        else 
+            csrAex <= csrAid;
+    end
+
+endmodule

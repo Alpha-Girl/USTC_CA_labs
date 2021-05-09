@@ -35,7 +35,14 @@ module MEMSegReg(
            input wire [3: 0] MemWriteE,
            output reg [3: 0] MemWriteM,
            input wire LoadNpcE,
-           output reg LoadNpcM
+           output reg LoadNpcM,
+           input wire csrreg_write_enE,
+           input wire [31:0] csrregOutE,
+           input wire [11:0] csrSrcE,
+           output reg [11:0] csrSrcM,
+           output reg csrreg_write_enM,
+           input wire [31:0]csrALU_out,
+           output reg [31:0] csrreg_write_dataM
        );
 initial
 begin
@@ -47,12 +54,21 @@ begin
     MemToRegM = 1'b0;
     MemWriteM = 4'b0;
     LoadNpcM = 0;
+    csrSrcM =12'b0;
+    csrreg_write_enM =1'b0;
+    csrreg_write_dataM =32'b0;
 end
 
 always@(posedge clk)
     if (en)
     begin
-        AluOutM <= clear ? 0 : AluOutE;
+    if(clear)
+    AluOutM<=32'b0;
+    else if (csrreg_write_enE)
+        AluOutM <= csrregOutE;
+   else begin
+       AluOutM <= AluOutE;
+   end
         StoreDataM <= clear ? 0 : ForwardData2;
         RdM <= clear ? 5'h0 : RdE;
         PCM <= clear ? 0 : PCE;
@@ -60,6 +76,9 @@ always@(posedge clk)
         MemToRegM <= clear ? 1'b0 : MemToRegE;
         MemWriteM <= clear ? 4'b0 : MemWriteE;
         LoadNpcM <= clear ? 0 : LoadNpcE;
+        csrSrcM<= clear ? 12'b0 : csrSrcE;
+        csrreg_write_enM<= clear ? 0 :csrreg_write_enE;
+        csrreg_write_dataM<=clear? 32'b0:csrALU_out;
     end
 
 endmodule

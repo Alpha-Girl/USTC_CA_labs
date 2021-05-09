@@ -61,8 +61,14 @@ module WBSegReg(
            input wire [2: 0] RegWriteM,
            output reg [2: 0] RegWriteW,
            input wire MemToRegM,
-           output reg MemToRegW
-       );
+           output reg MemToRegW,
+           input wire [11:0] csrSrcM,
+           output reg [11:0] csrSrcW,
+           input wire csrreg_write_enM,
+           output reg csrreg_write_enW,
+           input wire [31:0] csrreg_write_dataM,
+           output reg [31:0] csrreg_write_dataW
+       ); 
 
 //
 initial
@@ -72,6 +78,9 @@ begin
     MemToRegW = 1'b0;
     ResultW = 0;
     RdW = 5'b0;
+    csrSrcW =12'b0;
+    csrreg_write_enW=1'b0;
+    csrreg_write_dataW=32'b0;
 end
 //
 always@(posedge clk)
@@ -82,6 +91,10 @@ always@(posedge clk)
         MemToRegW <= clear ? 1'b0 : MemToRegM;
         ResultW <= clear ? 0 : ResultM;
         RdW <= clear ? 5'b0 : RdM;
+        csrSrcW <=clear ?12'b0:csrSrcM;
+        
+    csrreg_write_enW<=clear ?1'b0:csrreg_write_enM;
+    csrreg_write_dataW<=clear?32'b0:csrreg_write_dataM;
     end
 
 wire [31: 0] RD_raw;
@@ -112,4 +125,40 @@ begin
 end
 assign RD = stall_ff ? RD_old : (clear_ff ? 32'b0 : RD_raw );
 
+endmodule
+module csrDwb(
+    input wire clk, bubbleW, flushW,
+    input wire [31:0] csrRegmem2,
+    output reg [31:0] csrRegwb
+    );
+
+    initial csrRegwb = 0;
+    
+    always@(posedge clk)
+        if (!bubbleW) 
+        begin
+            if (flushW)
+                csrRegwb <= 0;
+            else 
+                csrRegwb <= csrRegmem2;
+        end
+    
+endmodule
+module csrAddrwb(
+    input wire clk, bubbleW, flushW,
+    input wire [31:0] csrAmem,
+    output reg [31:0] csrAwb
+    );
+
+    initial csrAwb = 0;
+    
+    always@(posedge clk)
+        if (!bubbleW) 
+        begin
+            if (flushW)
+                csrAwb <= 0;
+            else 
+                csrAwb <= csrAmem;
+        end
+    
 endmodule
