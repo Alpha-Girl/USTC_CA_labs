@@ -18,6 +18,15 @@
 
 ### 实验内容和过程
 
+![QQ图片20210514215313](D:\USTC\CA2021_labs\lab2\report\doc\QQ图片20210514215313.png)
+
+<center>阶段一及阶段二数据通路图
+
+注：
+
+1. 阶段三需增加CSR的寄存器堆，CSR专用ALU，增加控制信号`CSRreg_write_en`，`CSRALU_func`，`CSRwb_select`。
+2. 核心代码`Harzard.v`，`ControlUnit.v`等已在线下检查过程中说明，根据报告从简原则，不再赘述，详见源代码部分或Github仓库[Alpha-Girl/CA2021_labs](https://github.com/Alpha-Girl/CA2021_labs)。
+
 #### 阶段一
 
 ##### 阶段目标
@@ -59,7 +68,7 @@
 
 运行结果如下，符合预期。
 
-![QQ图片20210514103759](D:\USTC\CA2021_labs\lab2\report\doc\QQ图片20210514103759.png)
+<img src="D:\USTC\CA2021_labs\lab2\report\doc\QQ图片20210514103759.png" alt="QQ图片20210514103759" style="zoom:25%;" />
 
 ###### 2testAll
 
@@ -84,7 +93,7 @@
 
 ##### 实验过程
 
-1. 增加CSR的寄存器堆，计算用的ALU，所需的控制信号，完成相关数据通路。
+1. 增加CSR的寄存器堆，计算用的ALU，所需的控制信号`CSRreg_write_en`，`CSRALU_func`，`CSRwb_select`，完成相关数据通路。
 2. 扩展`Harzard.v`，`EXSegReg.v`，`MEMSegReg.v`，`WBSegReg.v`等的设计。对`ContorlUnit.v`进行补全，增加对新的指令的控制。
 3. 设计并运行测试用例。
 4. 根据测试用例运行结果评估CPU的功能实现是否符合预期，并进行相应修改，直至CPU正确运行。
@@ -153,4 +162,6 @@
 ### 附
 
 本次实验所有代码保存于Github仓库[Alpha-Girl/CA2021_labs](https://github.com/Alpha-Girl/CA2021_labs)。
+
+
 
