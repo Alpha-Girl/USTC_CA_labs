@@ -55,14 +55,14 @@ always@(posedge clk)
         PCD <= clear ? 0 : PCF;
 
 wire [31: 0] RD_raw;
-InstructionRam InstructionRamInst (
+InstructionCache InstructionRamInst (
                    .clk (clk),                          //请完善代码
-                   .addra (A[31: 2]),                          //请完善代码
-                   .douta ( RD_raw ),
-                   .web ( WE2 ),
-                   .addrb ( A2[31: 2] ),
-                   .dinb ( WD2 ),
-                   .doutb ( RD2 )
+                   .addr (A[31: 2]),                          //请完善代码
+                   .data ( RD_raw ),
+                   .write_en ( WE2 ),
+                   .debug_addr ( A2[31: 2] ),
+                   .debug_input ( WD2 ),
+                   .debug_data ( RD2 )
                );
 // Add clear and stall support
 // if chip not enabled, output output last read result

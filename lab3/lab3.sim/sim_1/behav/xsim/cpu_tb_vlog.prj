@@ -1,0 +1,25 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../lab2/lab2.srcs/sources_1/imports/SourceCode/ALU.v" \
+"../../../../../lab2/lab2.srcs/sources_1/imports/SourceCode/BranchDecisionMaking.v" \
+"../../../../../lab2/lab2.srcs/sources_1/imports/SourceCode/ControlUnit.v" \
+"../../../../../lab2/lab2.srcs/sources_1/imports/SourceCode/DataExt.v" \
+"../../../../lab3.srcs/sources_1/imports/BRAMModule/DataRam.v" \
+"../../../../../lab2/lab2.srcs/sources_1/imports/SourceCode/EXSegReg.v" \
+"../../../../../lab2/lab2.srcs/sources_1/imports/SourceCode/HarzardUnit.v" \
+"../../../../lab3.srcs/sources_1/imports/SourceCode/IDSegReg.v" \
+"../../../../../lab2/lab2.srcs/sources_1/imports/SourceCode/IFSegReg.v" \
+"../../../../../lab2/lab2.srcs/sources_1/imports/SourceCode/ImmOperandUnit.v" \
+"../../../../lab3.srcs/sources_1/imports/BRAMModule/InstructionRam.v" \
+"../../../../../lab2/lab2.srcs/sources_1/imports/SourceCode/MEMSegReg.v" \
+"../../../../../lab2/lab2.srcs/sources_1/imports/SourceCode/NPC_Generator.v" \
+"../../../../lab3.srcs/sources_1/imports/SourceCode/RV32Core.v" \
+"../../../../../lab2/lab2.srcs/sources_1/imports/SourceCode/RegisterFile.v" \
+"../../../../../lab2/lab2.srcs/sources_1/imports/SourceCode/WBSegReg.v" \
+"../../../../lab3.srcs/sim_1/imports/Testbench/cpu_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

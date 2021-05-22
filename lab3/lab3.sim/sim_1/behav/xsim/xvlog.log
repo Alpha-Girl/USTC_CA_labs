@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab3/lab3.srcs/sources_1/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IDSegReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/lab3/lab3.srcs/sources_1/imports/BRAMModule/InstructionRam.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionCache
