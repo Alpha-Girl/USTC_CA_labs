@@ -1,36 +1,23 @@
-`timescale 1ns / 1ps 
-//////////////////////////////////////////////////////////////////////////////////
-// Company: USTC ESLAB
-// Engineer: Wu Yuzhang
-//
-// Design Name: RISCV-Pipline CPU
-// Module Name: IFSegReg
-// Target Devices: Nexys4
-// Tool Versions: Vivado 2017.4.1
-// Description: PC Register
-//////////////////////////////////////////////////////////////////////////////////
-//鍔熻兘璇存槑
-//IDSegReg鏄疘F-ID娈靛瘎瀛樺櫒
-//瀹為獙瑕佹眰
-//鏃犻渶淇敼
-
+//IFSegReg是取指段寄存器，存储着取指阶段访问的PC值
 module IFSegReg(
-           input wire clk,
-           input wire en, clear,
-           input wire [31: 0] PC_In,
-           output reg [31: 0] PCF
-       );
-initial
-    PCF = 0;
-
-always@(posedge clk)
-    if (en)
+    input wire clk,
+    input wire rst,
+    input wire en,
+    input wire [31:0] PC_In,
+    output reg [31:0] PC
+    );
+    
+    always@(posedge clk or posedge rst)
     begin
-        if (clear)
-            PCF <= 0;
-        else
-            PCF <= PC_In;
+        if(rst)
+            PC<=32'b0;
+        else 
+        begin
+            if(en)
+                PC<=PC_In;
+            else
+                PC<=PC;        
+        end
     end
-
+    
 endmodule
-

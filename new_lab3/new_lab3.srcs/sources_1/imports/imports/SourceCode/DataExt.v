@@ -1,64 +1,68 @@
-`timescale 1ns / 1ps 
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: USTC ESLAB
-// Engineer: Wu Yuzhang
-//
-// Design Name: RISCV-Pipline CPU
+// Company: 
+// Engineer: qihao
+// 
+// Create Date: 03/09/2019 09:03:05 PM
+// Design Name: 
 // Module Name: DataExt
-// Target Devices: Nexys4
-// Tool Versions: Vivado 2017.4.1
-// Description: Data Extension module
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
 //////////////////////////////////////////////////////////////////////////////////
-//功能说明
-//DataExt是用来处理非字对齐load的情形，同时根据load的不同模式对Data Mem中load的数进行符号或�?�无符号拓展，组合�?�辑电路
-//输入
-//IN                    是从Data Memory中load�?32bit�?
-//LoadedBytesSelect     等价于AluOutM[1:0]，是读Data Memory地址的低两位�?
-//因为DataMemory是按字（32bit）进行访问的，所以需要把字节地址转化为字地址传给DataMem
-//DataMem�?次返回一个字，低两位地址用来�?32bit字中挑�?�出我们�?要的字节
-//RegWriteW             表示不同�? 寄存器写入模�? ，所有模式定义在Parameters.v�?
-//输出
-//OUT表示要写入寄存器的最终�??
-//实验要求
-//补全模块
 
-`include "Parameters.v"
+
 module DataExt(
-           input wire [31: 0] IN,
-           input wire [1: 0] LoadedBytesSelect,
-           input wire [2: 0] RegWriteW,
-           output reg [31: 0] OUT
-       );
-wire [31: 0] LoadByte_IN = (IN >> (LoadedBytesSelect * 32'h8)) & 32'hff;
-wire [31: 0] LoadHalfWord_IN = (IN >> (LoadedBytesSelect * 32'h8)) & 32'hffff;
-always @( * ) begin
-    case (RegWriteW)
-        `LB:
-        begin
-            OUT <= {{24{LoadByte_IN[7]}}, LoadByte_IN[7: 0]};
-        end
-        `LH:
-        begin
-            OUT <= {{16{LoadHalfWord_IN[15]}}, LoadHalfWord_IN[15: 0]};
-        end
-        `LW:
-        begin
-            OUT <= IN;
-        end
-        `LBU:
-        begin
-            OUT <= {24'h0, LoadByte_IN[7: 0]};
-        end
-        `LHU:
-        begin
-            OUT <= {16'h0, LoadHalfWord_IN[15: 0]};
-        end
-        default:
-        begin
-
-        end
-    endcase
-end
-
+    input wire [31:0] IN,
+    input wire [1:0] ADDR,
+    input wire [2:0] WE3,
+    output reg [31:0] OUT
+    );
+`include "Parameters.v"    
+    wire [31:0] LB_IN;
+    wire [31:0] LH_IN;
+    assign LB_IN = (IN >> (ADDR * 32'h08)) & 32'h000000ff;
+    assign LH_IN = (IN >> (ADDR * 32'h08)) & 32'h0000ffff;
+    always @(*)
+    begin
+        case(WE3)
+            LB:        //load byte
+                begin
+                    OUT[7:0]<=LB_IN[7:0];
+                    OUT[31:8]<={24{LB_IN[7]}};
+                end
+            LH:        //load half word
+                begin
+                    OUT[15:0]<=LH_IN[15:0];
+                    OUT[31:16]<={16{LH_IN[15]}};
+                end
+            LW:        //load word
+                begin
+                    OUT<=IN;
+                end
+            LBU:       //load byte unsigned
+                begin
+                    OUT[7:0]<=LB_IN[7:0];
+                    OUT[31:8]<=24'b0;
+                end
+            LHU:       //load half unsigned
+                begin
+                    OUT[15:0]<=LH_IN[15:0];
+                    OUT[31:16]<=16'b0;
+                end
+            default:       
+                begin
+                    //
+                end
+        endcase
+    end
+    
 endmodule
-

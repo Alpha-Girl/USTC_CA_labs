@@ -1,7 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/ALU.v" \
-"../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/BranchDecisionMaking.v" \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/ControlUnit.v" \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/DataExt.v" \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/EXSegReg.v" \
@@ -11,7 +10,6 @@ verilog xil_defaultlib  \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/ImmOperandUnit.v" \
 "../../../../new_lab3.srcs/sources_1/ASM-Benchmark/generate_inst/InstructionCache.v" \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/MEMSegReg.v" \
-"../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/NPC_Generator.v" \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/RV32Core.v" \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/RegisterFile.v" \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/WBSegReg.v" \

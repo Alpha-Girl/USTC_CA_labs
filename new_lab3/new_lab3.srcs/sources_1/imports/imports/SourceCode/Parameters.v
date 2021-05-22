@@ -1,60 +1,31 @@
-`timescale 1ns / 1ps 
-//////////////////////////////////////////////////////////////////////////////////
-// Company: USTC ESLAB
-// Engineer: Wu Yuzhang
-//
-// Design Name: RISCV-Pipline CPU
-// Module Name:
-// Target Devices: Nexys4
-// Tool Versions: Vivado 2017.4.1
-// Description: Define some constant values
-//////////////////////////////////////////////////////////////////////////////////
-//ÂäüËÉΩËØ¥Êòé
-//‰∏∫‰∫Ü‰ª£Á†ÅÂèØËØªÊÄßÔºåÂÆö‰πâ‰∫ÜÂ∏∏ÈáèÂÄº
-//ÂÆûÈ™åË¶ÅÊ±Ç
-//Êó†ÈúÄ‰øÆÊîπ
-
-`ifndef CONST_VALUES
-`define CONST_VALUES 
-        //ALUContrl[3:0]
-`define SLL  4'd0
- `define SRL  4'd1
- `define SRA  4'd2
- `define ADD  4'd3
- `define SUB  4'd4
- `define XOR  4'd5
- `define OR  4'd6
- `define AND  4'd7
- `define SLT  4'd8
- `define SLTU  4'd9
- `define LUI  4'd10 
-        //BranchType[2:0]
-`define NOBRANCH  3'd0
- `define BEQ  3'd1
- `define BNE  3'd2
- `define BLT  3'd3
- `define BLTU  3'd4
- `define BGE  3'd5
- `define BGEU  3'd6 
-        //ImmType[2:0]
-`define RTYPE  3'd0
- `define ITYPE  3'd1
- `define STYPE  3'd2
- `define BTYPE  3'd3
- `define UTYPE  3'd4
- `define JTYPE  3'd5 
-        //RegWrite[2:0]  six kind of ways to save values to Register
-`define NOREGWRITE  3'b0	//	Do not write Register
- `define LB  3'd1			//	load 8bit from Mem then signed extended to 32bit
- `define LH  3'd2			//	load 16bit from Mem then signed extended to 32bit
- `define LW  3'd3			//	write 32bit to Register
- `define LBU  3'd4			//	load 8bit from Mem then unsigned extended to 32bit
- `define LHU  3'd5			//	load 16bit from Mem then unsigned extended to 32bit 
-        // CSRALU_func[2:0]
-`define CSRRW   3'd0
- `define CSRRS   3'd1
- `define CSRRC   3'd2
- `define CSRRWI  3'd3
- `define CSRRSI  3'd4
- `define CSRRCI  3'd5
-`endif
+//0: SLL 1:SRL 2:SRA 3:ADD 4:SUB 5:XOR 6:OR 7:AND 8:SLT 9:SLTU 10:BEQ 11:BNE 12:BLT 13:BLTU 14:BGE 15:BGEU
+    localparam SLL = 5'd0;
+    localparam SRL = 5'd1;
+    localparam SRA = 5'd2;
+    localparam ADD = 5'd3;
+    localparam SUB = 5'd4;
+    localparam XOR = 5'd5;
+    localparam OR = 5'd6;
+    localparam AND = 5'd7;
+    localparam SLT = 5'd8;
+    localparam SLTU = 5'd9;
+    localparam BEQ = 5'd10;
+    localparam BNE = 5'd11;
+    localparam BLT = 5'd12;
+    localparam BLTU = 5'd13;
+    localparam BGE = 5'd14;
+    localparam BGEU = 5'd15;
+    localparam LUI = 5'd16;
+    // 0:I 1:S 2:B 3:U 4:J
+    localparam ITYPE = 5'd0;
+    localparam STYPE = 5'd1;
+    localparam BTYPE = 5'd2;
+    localparam UTYPE = 5'd3;
+    localparam JTYPE = 5'd4;  
+    //0:≤ª–¥»Î 1:8bit∑˚∫≈Õÿ’π∫Û–¥»Î 2:16bit∑˚∫≈Õÿ’π∫Û–¥»Î 3:32bit÷±Ω”–¥»Î 4:8bitŒﬁ∑˚∫≈Õÿ’π–¥»Î 5:16bitŒﬁ∑˚∫≈Õÿ’π–¥»Î
+    localparam NOREGWRITE = 5'b0;
+    localparam LB = 5'd1;
+    localparam LH = 5'd2;
+    localparam LW = 5'd3;
+    localparam LBU = 5'd4;
+    localparam LHU = 5'd5;   

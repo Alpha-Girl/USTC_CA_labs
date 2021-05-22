@@ -1,92 +1,184 @@
-`timescale 1ns / 1ps 
-//////////////////////////////////////////////////////////////////////////////////
-// Company: USTC ESLAB
-// Engineer: Wu Yuzhang
-//
-// Design Name: RISCV-Pipline CPU
-// Module Name: HarzardUnit
-// Target Devices: Nexys4
-// Tool Versions: Vivado 2017.4.1
-// Description: Deal with harzards in pipline
-//////////////////////////////////////////////////////////////////////////////////
-//åŠŸèƒ½è¯´æ˜
-//HarzardUnitç”¨æ¥å¤„ç†æµæ°´çº¿å†²çªï¼Œé€šè¿‡æ’å…¥æ°”æ³¡ï¼Œforwardä»¥åŠå†²åˆ·æµæ°´æ®µè§£å†³æ•°æ®ç›¸å…³å’Œæ§åˆ¶ç›¸å…³ï¼Œç»„åˆï¿½?ï¿½è¾‘ç”µè·¯
-//å¯ä»¥ï¿½?åå®ç°ï¿½?ï¿½å‰æœŸæµ‹è¯•CPUæ­£ç¡®æ€§æ—¶ï¼Œå¯ä»¥åœ¨æ¯ä¸¤æ¡æŒ‡ä»¤é—´æ’å…¥å››æ¡ç©ºæŒ‡ä»¤ï¼Œç„¶åç›´æ¥æŠŠæœ¬æ¨¡å—è¾“å‡ºå®šä¸ºï¼Œä¸forwardï¼Œä¸stallï¼Œä¸flush
-//è¾“å…¥
-//CpuRst                                    å¤–éƒ¨ä¿¡å·ï¼Œç”¨æ¥åˆå§‹åŒ–CPUï¼Œå½“CpuRst==1æ—¶CPUå…¨å±€å¤ä½æ¸…é›¶ï¼ˆæ‰€æœ‰æ®µå¯„å­˜å™¨flushï¼‰ï¼ŒCpu_Rst==0æ—¶cpuï¿½?å§‹æ‰§è¡ŒæŒ‡ï¿½?
-//ICacheMiss, DCacheMiss                    ä¸ºåç»­å®éªŒé¢„ç•™ä¿¡å·ï¼Œæš‚æ—¶å¯ä»¥æ— è§†ï¼Œç”¨æ¥å¤„ç†cache miss
-//BranchE, JalrE, JalD                      ç”¨æ¥å¤„ç†æ§åˆ¶ç›¸å…³
-//Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW     ç”¨æ¥å¤„ç†æ•°æ®ç›¸å…³ï¼Œåˆ†åˆ«è¡¨ç¤ºæºå¯„å­˜ï¿½?1å·ç ï¼Œæºå¯„å­˜ï¿½?2å·ç ï¼Œç›®æ ‡å¯„å­˜å™¨å·ç 
-//RegReadE RegReadD[1]==1                   è¡¨ç¤ºA1å¯¹åº”çš„å¯„å­˜å™¨å€¼è¢«ä½¿ç”¨åˆ°äº†ï¼ŒRegReadD[0]==1è¡¨ç¤ºA2å¯¹åº”çš„å¯„å­˜å™¨å€¼è¢«ä½¿ç”¨åˆ°äº†ï¼Œç”¨äºforwardçš„å¤„ï¿½?
-//RegWriteM, RegWriteW                      ç”¨æ¥å¤„ç†æ•°æ®ç›¸å…³ï¼ŒRegWrite!=3'b0è¯´æ˜å¯¹ç›®æ ‡å¯„å­˜å™¨æœ‰å†™å…¥æ“ï¿½?
-//MemToRegE                                 è¡¨ç¤ºExæ®µå½“å‰æŒ‡ï¿½? ä»Data Memoryä¸­åŠ è½½æ•°æ®åˆ°å¯„å­˜å™¨ä¸­
-//è¾“å‡º
-//StallF, FlushF, StallD, FlushD, StallE, FlushE, StallM, FlushM, StallW, FlushW    æ§åˆ¶äº”ä¸ªæ®µå¯„å­˜å™¨è¿›è¡Œstallï¼ˆç»´æŒçŠ¶æ€ä¸å˜ï¼‰å’Œflushï¼ˆæ¸…é›¶ï¼‰
-//Forward1E, Forward2E                                                              æ§åˆ¶forward
-//å®éªŒè¦æ±‚
-//è¡¥å…¨æ¨¡å—
+/*  
+ *  HarzardUnitÊÇÓÃÀ´½â¾öÁ÷Ë®ÏßµÄÊı¾İÏà¹Ø¡¢¿ØÖÆÏà¹ØÎÊÌâ£¬Êä³östall¡¢flushºÍforwardĞÅºÅ 
+ *  Author: Haojun Xia  
+ *  Email: xhjustc@mail.ustc.edu.cn
+ *  Time: 2019.2.22
+ */
 
+/* StallºÍFlushĞÅºÅµÄÊ¹ÓÃ³¡¾° *///////////////////////////////////////////////////////
+//  1.Load-UseĞÍ£¬Ç°Ò»ÌõÖ¸Áîloadµ½xºÅ¼Ä´æÆ÷£¬½ô½Ó×ÅµÄÖ¸ÁîÓÃµ½ÁËxºÅ¼Ä´æÆ÷×÷Îª²Ù×÷Êı
+//  µ±load´¦ÓÚEX½×¶Î£¬Use´¦ÓÚID½×¶ÎÊ±£¬StallF=1 StallD=1 FLushE=1
+//  IF      ID      EX   |     MM      WB                           [Load]
+//          IF      ID   | IDÖØĞÂÒëÂë  EX     MM      WB            [Use]       
+//  Ìõ¼şÅĞ¶Ï£º£¨MemToRegE==1£© && £¨RdE==Rs1D||RdE==Rs2D)
+//  ĞÅºÅÊä³ö£º StallF=1 StallD=1 FLushE=1
+//
+//  2.JALÎŞÌõ¼şÌø×ª
+// µ±JAL´¦ÓÚID½×¶ÎÊ±£¬FlushD=1
+//  IF      ID   |     EX        MM      WB                          [JAL]
+//          IF   |   IFÈ¡ĞÂµØÖ·  ID      EX     MM      WB           [Any]
+//  Ìõ¼şÅĞ¶Ï£ºJalD==1
+//  ĞÅºÅÊä³ö£ºFlushD=1
+//
+//  3.JALRÎŞÌõ¼şÌø×ª
+//  µ±JALR´¦ÓÚID½×¶ÎÊ±£¬StallF=1£¬FlushD=1
+//  IF      ID   |    EX                                              [JALR]
+//          IF   |   IFÈ¡ÏàÍ¬µØÖ·                                     [Any]
+//  Ìõ¼şÅĞ¶Ï£ºJalrD==1
+//  ĞÅºÅÊä³ö£ºStallF=1 FlushD=1
+//  µ±JALR´¦ÓÚEX½×¶ÎÊ±£¬FLushD=1
+//  IF      ID      EX       |    MM       WB                         [JALR]
+//          IF  IFÈ¡ÏàÍ¬µØÖ· | IFÈ¡ĞÂµØÖ·  ID     EX     MM     WB    [Any]
+//  Ìõ¼şÅĞ¶Ï£ºJalrE==1
+//  ĞÅºÅÊä³ö£ºFlushD=1
+//
+//  4.BranchÌõ¼ş·ÖÖ§
+//  µ±Br´¦ÓÚID½×¶ÎÊ±£¬StallF=1£¬FlushD=1
+//  IF      ID   |    EX                                              [Br]
+//          IF   |   IFÈ¡ÏàÍ¬µØÖ·                                     [Any]
+//  Ìõ¼şÅĞ¶Ï£ºBranchD==1
+//  ĞÅºÅÊä³ö£ºStallF=1£¬FlushD=1
+//  µ±Br´¦ÓÚEX½×¶ÎÊ±
+//  Èç¹ûBranchE=1£¨¼´·ÖÖ§Ìõ¼ş³ÉÁ¢Ê±£©£¬FlushD=1
+//  IF      ID      EX       |    MM       WB                         [JALR]
+//          IF  IFÈ¡ÏàÍ¬µØÖ· | IFÈ¡ĞÂµØÖ·  ID     EX     MM     WB    [Any]
+//  Ìõ¼şÅĞ¶Ï£ºBranchE==1
+//  ĞÅºÅÊä³ö£ºFlushD=1
+//  Èç¹ûBranchE=0£¬²»×÷ÆäËüÌØÊâ´¦Àí
+//  IF      ID      EX       |    MM       WB                         [JALR]
+//          IF  IFÈ¡ÏàÍ¬µØÖ· |    ID       EX     MM     WB           [Any]
+//  Ìõ¼şÅĞ¶Ï£ºBranchE==0
+//  ĞÅºÅÊä³ö£º²»×÷ÆäËüÌØÊâ´¦Àí
+//////////////////////////////////////////////////////////////////////////////////////
+/* StallºÍFlushĞÅºÅµÄÊ¹ÓÃ³¡¾° *///////////////////////////////////////////////////////
+//  1.EX½×¶ÎĞèÒªÓÃµ½ ÉÏÉÏ ÌõÖ¸ÁîloadµÄÖµ»òÕßALU¼ÆËã½á¹û
+//  Ìõ¼şÅĞ¶Ï£ºRegWriteW==1 && (RdW==Rs1E||RdW==Rs2E)
+//  ĞÅºÅÊä³ö£ºForward1E=2'b01 Forward2E=2'b01
+//  2.EX½×¶ÎĞèÒªÓÃµ½ ÉÏ ÌõÖ¸ÁîµÄALU¼ÆËã½á¹û
+//  Ìõ¼şÅĞ¶Ï£ºRegWriteM==1 && (RdM==Rs1E||RdM==Rs2E)
+//  ĞÅºÅÊä³ö£ºForward1E=2'b10 Forward2E=2'b10
+//////////////////////////////////////////////////////////////////////////////////////  
+
+//´¦ÀíË³Ğò  ÓÅÏÈ´¦ÀíEX¶ÎµÄÇé¿ö ÔÙ¿¼ÂÇID¶Î
+//ÖµµÃ×¢ÒâµÄÊÇ£¬Èç¹ûEX¶ÎÊÇBranch¡¢Jal»òÕßJalr£¬´ËÊ±ID¶¼Îª¿Õ£¬²»»á³öÏÖÒÔÉÏ¶àÖÖÇé¿ö²¢´æ
+//Èç¹ûEXÊÇload£¬³öÏÖÁËload-useÎÊÌâ£¬ÄÇÃ´ÓÅÏÈ´¦ÀíEX¶ÎµÄ³åÍ»£¬½«°´ÕÕload-useÎÊÌâ´¦Àí£¬¼´Ê¹ID¶ÎÊÇÌø×ªÖ¸Áî£¬Ò²ÔİÇÒ²»²ÉÈ¡´ëÊ©
 
 module HarzardUnit(
-           input wire CpuRst, ICacheMiss, DCacheMiss,
-           input wire BranchE, JalrE, JalD,
-           input wire [4: 0] Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW,
-           input wire [1: 0] RegReadE,
-           input wire MemToRegE,
-           input wire [2: 0] RegWriteM, RegWriteW,
-           output reg StallF, FlushF, StallD, FlushD, StallE, FlushE, StallM, FlushM, StallW, FlushW,
-           output reg [1: 0] Forward1E, Forward2E,
-           input wire CSRreg_write_enM, CSRreg_write_enW, CSRreg_write_enE,
-           input wire [11: 0] CSRSrcM, CSRSrcW, CSRSrcE,
-           output reg [1: 0] ForwardCSR
-       );
-
-always @ ( * )
-    if (CpuRst)
-        {StallF, FlushF, StallD, FlushD, StallE, FlushE, StallM, FlushM, StallW, FlushW} <= 10'b0101010101;
-    else if (DCacheMiss | ICacheMiss)
-        {StallF, FlushF, StallD, FlushD, StallE, FlushE, StallM, FlushM, StallW, FlushW} <= 10'b1010101010;
-    else if (BranchE | JalrE)
-        {StallF, FlushF, StallD, FlushD, StallE, FlushE, StallM, FlushM, StallW, FlushW} <= 10'b0001010000;
-    else if (MemToRegE & ((RdE == Rs1D) || (RdE == Rs2D)) )
-        {StallF, FlushF, StallD, FlushD, StallE, FlushE, StallM, FlushM, StallW, FlushW} <= 10'b1010010000;
-    else if (JalD)
-        {StallF, FlushF, StallD, FlushD, StallE, FlushE, StallM, FlushM, StallW, FlushW} <= 10'b0001000000;
-    else
-        {StallF, FlushF, StallD, FlushD, StallE, FlushE, StallM, FlushM, StallW, FlushW} <= 10'b0000000000;
-
-always@( * )begin
-    if ( (RegWriteM != 3'b0) && (RegReadE[1] != 0) && (RdM == Rs1E) && (RdM != 5'b0) )
-        Forward1E <= 2'b10;
-    else if ( (RegWriteW != 3'b0) && (RegReadE[1] != 0) && (RdW == Rs1E) && (RdW != 5'b0) )
-        Forward1E <= 2'b01;
-    else
-        Forward1E <= 2'b00;
-end
-
-always@( * )begin
-    if ( (RegWriteM != 3'b0) && (RegReadE[0] != 0) && (RdM == Rs2E) && (RdM != 5'b0) )
-        Forward2E <= 2'b10;
-    else if ( (RegWriteW != 3'b0) && (RegReadE[0] != 0) && (RdW == Rs2E) && (RdW != 5'b0) )
-        Forward2E <= 2'b01;
-    else
-        Forward2E <= 2'b00;
-end
-always @( * ) begin
-    if ((CSRSrcE == CSRSrcM) && (CSRreg_write_enE == CSRreg_write_enM) && (CSRreg_write_enE))
+    input wire BranchD, BranchE,
+    input wire JalrD, JalrE, JalD,
+    input wire [4:0] Rs1D, Rs2D, Rs1E, Rs2E,
+    input wire MemToRegE,
+    input wire [2:0] RegWriteE, RegWriteM, RegWriteW,
+    input wire [4:0] RdE, RdM, RdW,
+    input wire ICacheMiss, DCacheMiss ,
+    output reg StallF, FlushD, StallD, FlushE, StallE, StallM, StallW,
+    output wire Forward1D, Forward2D,
+    output reg [1:0] Forward1E, Forward2E
+    );
+    //
+    assign Forward1D=1'b0;
+    assign Forward2D=1'b0;
+    //Stall and Flush signals generate
+    always @ (*)
     begin
-        ForwardCSR <= 2'b10;
-
+        if(DCacheMiss | ICacheMiss)
+        begin
+            StallF<=1'b1;
+            StallD<=1'b1;
+            FlushD<=1'b0;
+            FlushE<=1'b0;
+            StallE<=1'b1;
+            StallM<=1'b1;
+            StallW<=1'b1;
+        end
+        else if(BranchE)
+        begin
+            StallF<=1'b0;
+            StallD<=1'b0;
+            FlushD<=1'b1;
+            FlushE<=1'b0;
+            StallE<=1'b0;
+            StallM<=1'b0;
+            StallW<=1'b0;
+        end
+        else if(JalrE)
+            begin
+            StallF<=1'b0;
+            StallD<=1'b0;
+            FlushD<=1'b1;
+            FlushE<=1'b0;
+            StallE<=1'b0;
+            StallM<=1'b0;
+            StallW<=1'b0;
+        end
+        else if(MemToRegE & ((RdE==Rs1D)||(RdE==Rs2D)) )
+            begin
+            StallF<=1'b1;
+            StallD<=1'b1;
+            FlushD<=1'b0;
+            FlushE<=1'b1;
+            StallE<=1'b0;
+            StallM<=1'b0;
+            StallW<=1'b0;
+        end
+        else if(JalrD)
+        begin
+            StallF<=1'b1;
+            StallD<=1'b0;
+            FlushD<=1'b1;
+            FlushE<=1'b0;
+            StallE<=1'b0;
+            StallM<=1'b0;
+            StallW<=1'b0;
+        end
+        else if(JalD)
+        begin
+            StallF<=1'b0;
+            StallD<=1'b0;
+            FlushD<=1'b1;
+            FlushE<=1'b0;        
+            StallE<=1'b0;
+            StallM<=1'b0;
+            StallW<=1'b0;   
+        end
+        else if(BranchD)
+        begin
+            StallF<=1'b1;
+            StallD<=1'b0;
+            FlushD<=1'b1;
+            FlushE<=1'b0;
+            StallE<=1'b0;
+            StallM<=1'b0;
+            StallW<=1'b0;
+            end
+        else
+        begin
+            StallF<=1'b0;
+            StallD<=1'b0;
+            FlushD<=1'b0;
+            FlushE<=1'b0;
+            StallE<=1'b0;
+            StallM<=1'b0;
+            StallW<=1'b0;
+        end
     end
-    else if ((CSRSrcE == CSRSrcW) && (CSRreg_write_enE == CSRreg_write_enW) && (CSRreg_write_enE))
+    //ForwardĞÅºÅµÄÊ¹ÓÃ³¡¾°
+    always@(*)
     begin
-        ForwardCSR <= 2'b01 ;
+        if( (RegWriteM!=3'b0) && (RdM==Rs1E) &&(RdM!=5'b0) )
+            Forward1E<=2'b10;
+        else if( (RegWriteW!=3'b0) && (RdW==Rs1E) &&(RdW!=5'b0) )
+            Forward1E<=2'b01;
+        else
+            Forward1E<=2'b00;
     end
-    else
+    always@(*)
     begin
-        ForwardCSR <= 2'b00 ;
-    end
-end
+        if( (RegWriteM!=3'b0) && (RdM==Rs2E) &&(RdM!=5'b0) )
+            Forward2E<=2'b10;
+        else if( (RegWriteW!=3'b0) && (RdW==Rs2E) &&(RdW!=5'b0) )
+            Forward2E<=2'b01;
+        else
+            Forward2E<=2'b00;
+    end      
 endmodule
-
-

@@ -9,10 +9,10 @@
 // Tool Versions: Vivado 2017.4.1
 // Description: Decide whether to branch
 //////////////////////////////////////////////////////////////////////////////////
-//功能和接口说�?
+//功能和接口说�??
 //BranchDecisionMaking接受两个操作数，根据BranchTypeE的不同，进行不同的判断，当分支应该taken时，令BranchE=1'b1
-//BranchTypeE的类型定义在Parameters.v�?
-//推荐格式�?
+//BranchTypeE的类型定义在Parameters.v�??
+//推荐格式�??
 //case()
 //    `BEQ: ???
 //      .......
@@ -31,17 +31,17 @@ wire signed [31: 0] Operand1_S = $signed(Operand1);
 wire signed [31: 0] Operand2_S = $signed(Operand2);
 always @( * ) begin
     case (BranchTypeE)
-        `BEQ:
+        BEQ:
             BranchE <= (Operand1 == Operand2) ? 1'b1 : 1'b0;
-        `BNE:
+        BNE:
             BranchE <= (Operand1 == Operand2) ? 1'b0 : 1'b1;
-        `BLT:
+        BLT:
             BranchE <= (Operand1_S < Operand2_S ) ? 1'b1 : 1'b0;
-        `BLTU:
+        BLTU:
             BranchE <= (Operand1 < Operand2) ? 1'b1 : 1'b0;
-        `BGE:
+        BGE:
             BranchE <= (Operand1_S >= Operand2_S ) ? 1'b1 : 1'b0;
-        `BGEU:
+        BGEU:
             BranchE <= (Operand1 >= Operand2) ? 1'b1 : 1'b0;
         default:
             BranchE <= 1'b0;  //NOBRANCH

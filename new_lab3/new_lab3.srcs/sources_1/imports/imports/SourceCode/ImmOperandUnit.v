@@ -1,56 +1,29 @@
-`timescale 1ns / 1ps 
-//////////////////////////////////////////////////////////////////////////////////
-// Company: USTC ESLAB
-// Engineer: Wu Yuzhang
-//
-// Design Name: RISCV-Pipline CPU
-// Module Name: ImmOperandUnit
-// Target Devices: Nexys4
-// Tool Versions: Vivado 2017.4.1
-// Description: Generate different type of Immediate Operand
-//////////////////////////////////////////////////////////////////////////////////
-//åŠŸèƒ½è¯´æ˜
-//ImmOperandUnitåˆ©ç”¨æ­£åœ¨è¢«è¯‘ç çš„æŒ‡ä»¤çš„éƒ¨åˆ†ç¼–ç å€¼ï¼Œç”Ÿæˆä¸åŒç±»å‹çš„32bitç«‹å³æ•°
-//è¾“å…¥
-//IN        æ˜¯æŒ‡ä»¤é™¤äº†opcodeä»¥å¤–çš„éƒ¨åˆ†ç¼–ç å€¼
-//Type      è¡¨ç¤ºç«‹å³æ•°ç¼–ç ç±»å‹ï¼Œå…¨éƒ¨ç±»å‹å®šä¹‰åœ¨Parameters.vä¸­
-//è¾“å‡º
-//OUT       è¡¨ç¤ºæŒ‡ä»¤å¯¹åº”çš„ç«‹å³æ•°32bitå®é™…å€¼
-//å®éªŒè¦æ±‚
-//è¡¥å…¨ImmOperandUnitæ¨¡å—ï¼Œéœ€è¡¥å…¨çš„ç‰‡æ®µæˆªå–å¦‚ä¸‹
-//always@(*)
-//begin
-//    case(Type)
-//        `ITYPE: Out<={ {21{In[31]}}, In[30:20] };
-//        //......                                        //è¯·å®Œå–„ä»£ç 
-//        default:Out<=32'hxxxxxxxx;
-//    endcase
-//end
-
-`include "Parameters.v"
+//ImmOperandUnit½ÓÊÕ32bitÖ¸Áî³ıÁË²Ù×÷ÂëÒÔÍâËùÓĞµÄ±ÈÌØ£¬Í¬Ê±½ÓÊÕÀ´×Ô¿ØÖÆµ¥ÔªµÄTypeĞÅºÅ£¬Êä³ö²»Í¬ÀàĞÍµÄÁ¢¼´Êı
+//Type·ÖÎªÎåÀà£ºISBUJ
 module ImmOperandUnit(
-           input wire [31: 7] In,
-           input wire [2: 0] Type,
-           output reg [31: 0] Out
-       );
-//
-always@( * )
-begin
-    case (Type)
-        `ITYPE:
-            Out <= { {21{In[31]}}, In[30: 20] };
-        `STYPE:
-            Out <= {{21{In[31]}}, In[30: 25], In[11: 7]};
-        `BTYPE:
-            Out <= {{20{In[31]}}, In[7], In[30: 25], In[11: 8], 1'b0};
-        `UTYPE:
-            Out <= {In[31: 12], 12'b0};
-        `JTYPE:
-            Out <= {{12{In[31]}}, In[19: 12], In[20], In[30: 21], 1'b0};                                        //è¯·å®Œå–„ä»£ç 
-        default:
-            Out <= 32'hxxxxxxxx;
-    endcase
-end
-
+input wire [31:7] In,
+input wire [2:0] Type,
+output reg [31:0] Out
+    );
+    //
+`include "Parameters.v"
+    //
+    always@(*)
+    begin
+        case(Type)
+            ITYPE:     //I
+                Out<={ {21{In[31]}}, In[30:20] };
+            STYPE:      //S
+                Out<={ {21{In[31]}}, In[30:25], In[11:7] };
+            BTYPE:      //B
+                Out<={ {20{In[31]}}, In[7], In[30:25], In[11:8], 1'b0 };
+            UTYPE:      //U
+                Out<={ In[31:12], 12'b0 };
+            JTYPE:      //J
+                Out<={ {12{In[31]}}, In[19:12], In[20], In[30:21], 1'b0 };
+            default:   //ÆäËû ·µ»Ø32'b0
+                Out<=32'b0;
+        endcase
+    end
+    
 endmodule
-

@@ -1,11 +1,11 @@
 
-module main_mem #(                  // 每次读取一个line
-    parameter  LINE_ADDR_LEN =  3,  // line内地址长度，决定了每个line具有 2^LINE_ADDR_LEN 个word
-    parameter  ADDR_LEN  = 8        // 决定了mem中包含 2^ADDR_LEN 个line
+module main_mem #(                  // 每次读取�?个line
+    parameter  LINE_ADDR_LEN =  3,  // line内地�?长度，决定了每个line具有 2^LINE_ADDR_LEN 个word
+    parameter  ADDR_LEN  = 8        // 决定了mem中包�? 2^ADDR_LEN 个line
 )(
     input  clk, rst,
     output gnt,                     // read or write grant
-    input  [ADDR_LEN-1:0] addr,     // line的地址
+    input  [ADDR_LEN-1:0] addr,     // line的地�?
     input  rd_req,
     output reg [31:0] rd_line [1 << LINE_ADDR_LEN],
     input  wr_req,
@@ -21,7 +21,7 @@ reg  [(ADDR_LEN + LINE_ADDR_LEN) - 1 : 0] mem_addr = 0;
 reg  [31:0] mem_wr_data = 0;
 wire [31:0] mem_rd_data;
 
-mem #(
+mem_MM #(
     .ADDR_LEN  ( ADDR_LEN + LINE_ADDR_LEN    )
 ) mem_inst (
     .clk       (  clk           ),

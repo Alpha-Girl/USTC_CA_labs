@@ -1,5 +1,5 @@
-// asm file name: QuickSort.S
-module InstructionCache(
+// asm file name: MatMul.S
+module InstructionCache_MM(
     input wire clk,
     input wire web,
     input wire [31:2] addra, addrb,
@@ -19,75 +19,45 @@ module InstructionCache(
     initial begin
         douta = 32'h0;
         doutb = 32'h0;
-        inst_cache[       0] = 32'h10004693;
-        inst_cache[       1] = 32'h00001137;
-        inst_cache[       2] = 32'h00004533;
-        inst_cache[       3] = 32'h000045b3;
-        inst_cache[       4] = 32'hfff68613;
-        inst_cache[       5] = 32'h00261613;
-        inst_cache[       6] = 32'h024000ef;
-        inst_cache[       7] = 32'h00068293;
-        inst_cache[       8] = 32'h00050313;
-        inst_cache[       9] = 32'h00229293;
-        inst_cache[      10] = 32'h00231313;
-        inst_cache[      11] = 32'h00032383;
-        inst_cache[      12] = 32'h00430313;
-        inst_cache[      13] = 32'hfe534ce3;
-        inst_cache[      14] = 32'h0000006f;
-        inst_cache[      15] = 32'h0cc5da63;
-        inst_cache[      16] = 32'h0005e333;
-        inst_cache[      17] = 32'h000663b3;
-        inst_cache[      18] = 32'h006502b3;
-        inst_cache[      19] = 32'h0002a283;
-        inst_cache[      20] = 32'h04735263;
-        inst_cache[      21] = 32'h00750e33;
-        inst_cache[      22] = 32'h000e2e03;
-        inst_cache[      23] = 32'h005e4663;
-        inst_cache[      24] = 32'hffc38393;
-        inst_cache[      25] = 32'hfedff06f;
-        inst_cache[      26] = 32'h00650eb3;
-        inst_cache[      27] = 32'h01cea023;
-        inst_cache[      28] = 32'h02735263;
-        inst_cache[      29] = 32'h00650e33;
-        inst_cache[      30] = 32'h000e2e03;
-        inst_cache[      31] = 32'h01c2c663;
-        inst_cache[      32] = 32'h00430313;
-        inst_cache[      33] = 32'hfedff06f;
-        inst_cache[      34] = 32'h00750eb3;
-        inst_cache[      35] = 32'h01cea023;
-        inst_cache[      36] = 32'hfc7340e3;
-        inst_cache[      37] = 32'h00650eb3;
-        inst_cache[      38] = 32'h005ea023;
-        inst_cache[      39] = 32'hffc10113;
-        inst_cache[      40] = 32'h00112023;
-        inst_cache[      41] = 32'hffc10113;
-        inst_cache[      42] = 32'h00b12023;
-        inst_cache[      43] = 32'hffc10113;
-        inst_cache[      44] = 32'h00c12023;
-        inst_cache[      45] = 32'hffc10113;
-        inst_cache[      46] = 32'h00612023;
-        inst_cache[      47] = 32'hffc30613;
-        inst_cache[      48] = 32'hf7dff0ef;
-        inst_cache[      49] = 32'h00012303;
-        inst_cache[      50] = 32'h00410113;
-        inst_cache[      51] = 32'h00012603;
-        inst_cache[      52] = 32'h00410113;
-        inst_cache[      53] = 32'h00012583;
-        inst_cache[      54] = 32'hffc10113;
-        inst_cache[      55] = 32'h00c12023;
-        inst_cache[      56] = 32'hffc10113;
-        inst_cache[      57] = 32'h00612023;
-        inst_cache[      58] = 32'h00430593;
-        inst_cache[      59] = 32'hf51ff0ef;
-        inst_cache[      60] = 32'h00012303;
-        inst_cache[      61] = 32'h00410113;
-        inst_cache[      62] = 32'h00012603;
-        inst_cache[      63] = 32'h00410113;
-        inst_cache[      64] = 32'h00012583;
-        inst_cache[      65] = 32'h00410113;
-        inst_cache[      66] = 32'h00012083;
-        inst_cache[      67] = 32'h00410113;
-        inst_cache[      68] = 32'h00008067;
+        inst_cache[       0] = 32'h00404713;
+        inst_cache[       1] = 32'h00404693;
+        inst_cache[       2] = 32'h00e696b3;
+        inst_cache[       3] = 32'h00004633;
+        inst_cache[       4] = 32'h00e69533;
+        inst_cache[       5] = 32'h00a505b3;
+        inst_cache[       6] = 32'h000042b3;
+        inst_cache[       7] = 32'h00004333;
+        inst_cache[       8] = 32'h00004e33;
+        inst_cache[       9] = 32'h000043b3;
+        inst_cache[      10] = 32'h00e29eb3;
+        inst_cache[      11] = 32'h007e8eb3;
+        inst_cache[      12] = 32'h00ae8eb3;
+        inst_cache[      13] = 32'h000eae83;
+        inst_cache[      14] = 32'h00e39f33;
+        inst_cache[      15] = 32'h006f0f33;
+        inst_cache[      16] = 32'h00bf0f33;
+        inst_cache[      17] = 32'h000f2f03;
+        inst_cache[      18] = 32'h01eefeb3;
+        inst_cache[      19] = 32'h01de0e33;
+        inst_cache[      20] = 32'h00438393;
+        inst_cache[      21] = 32'hfcd3cae3;
+        inst_cache[      22] = 32'h00e29eb3;
+        inst_cache[      23] = 32'h006e8eb3;
+        inst_cache[      24] = 32'h00ce8eb3;
+        inst_cache[      25] = 32'h01cea023;
+        inst_cache[      26] = 32'h00430313;
+        inst_cache[      27] = 32'hfad34ae3;
+        inst_cache[      28] = 32'h00428293;
+        inst_cache[      29] = 32'hfad2c4e3;
+        inst_cache[      30] = 32'h00100293;
+        inst_cache[      31] = 32'h00e292b3;
+        inst_cache[      32] = 32'h00e292b3;
+        inst_cache[      33] = 32'h00229293;
+        inst_cache[      34] = 32'h00000313;
+        inst_cache[      35] = 32'h00032383;
+        inst_cache[      36] = 32'h00430313;
+        inst_cache[      37] = 32'hfe534ce3;
+        inst_cache[      38] = 32'h0000006f;
 end
 
     always@(posedge clk)
