@@ -2,10 +2,10 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sun May 23 15:57:42 2021
-# Process ID: 10720
+# Start of session at: Sun May 23 20:41:30 2021
+# Process ID: 18784
 # Current directory: D:/USTC/CA2021_labs/new_lab3
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3624 D:\USTC\CA2021_labs\new_lab3\new_lab3.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2712 D:\USTC\CA2021_labs\new_lab3\new_lab3.xpr
 # Log file: D:/USTC/CA2021_labs/new_lab3/vivado.log
 # Journal file: D:/USTC/CA2021_labs/new_lab3\vivado.jou
 #-----------------------------------------------------------
@@ -16,445 +16,8 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/XIlinx/Vivado/2019.1/data/ip'.
-open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 686.043 ; gain = 98.367
+open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 726.574 ; gain = 102.828
 update_compile_order -fileset sources_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-add_files -fileset sim_1 -norecurse {D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache_tb_16.sv D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache_tb_32.sv}
-update_compile_order -fileset sim_1
-set_property top cache_tb_16 [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-update_compile_order -fileset sim_1
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'cache_tb_16' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj cache_tb_16_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache_tb_16.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module cache_tb_16
-INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-"xelab -wto a722947a187646e6b81961758407f42f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot cache_tb_16_behav xil_defaultlib.cache_tb_16 xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto a722947a187646e6b81961758407f42f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot cache_tb_16_behav xil_defaultlib.cache_tb_16 xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv" Line 1. Module cache(SET_ADDR_LEN=2,TAG_ADDR_LEN=12) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/main_mem.sv" Line 2. Module main_mem(ADDR_LEN=14) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/mem.sv" Line 2. Module mem_MM(ADDR_LEN=17) doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mem_MM(ADDR_LEN=17)
-Compiling module xil_defaultlib.main_mem(ADDR_LEN=14)
-Compiling module xil_defaultlib.cache(SET_ADDR_LEN=2,TAG_ADDR_LE...
-Compiling module xil_defaultlib.cache_tb_16
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot cache_tb_16_behav
-
-****** Webtalk v2019.1 (64-bit)
-  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
-  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
-
-source D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim/xsim.dir/cache_tb_16_behav/webtalk/xsim_webtalk.tcl -notrace
-webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 79.859 ; gain = 11.379
-INFO: [Common 17-206] Exiting Webtalk at Sun May 23 16:07:02 2021...
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:22 . Memory (MB): peak = 757.441 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '22' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "cache_tb_16_behav -key {Behavioral:sim_1:Functional:cache_tb_16} -tclbatch {cache_tb_16.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source cache_tb_16.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-xsim: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 815.492 ; gain = 43.789
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'cache_tb_16_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:12 ; elapsed = 00:00:32 . Memory (MB): peak = 815.492 ; gain = 58.051
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-close_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 815.508 ; gain = 0.000
-set_property top cpu_tb [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-update_compile_order -fileset sim_1
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'cpu_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj cpu_tb_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/ASM-Benchmark/generate_inst/InstructionCache.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionCache_MM
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEMSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module cache
-WARNING: [VRFC 10-3824] variable 'free' must explicitly be declared as automatic or static [D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv:74]
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/main_mem.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module main_mem
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/mem.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mem_MM
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-"xelab -wto a722947a187646e6b81961758407f42f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot cpu_tb_behav xil_defaultlib.cpu_tb xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto a722947a187646e6b81961758407f42f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot cpu_tb_behav xil_defaultlib.cpu_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ControlUnit.v" Line 2. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ALU.v" Line 7. Module ALU doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv" Line 1. Module cache(SET_ADDR_LEN=2,TAG_ADDR_LEN=8,WAY_CNT=4) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/main_mem.sv" Line 2. Module main_mem(ADDR_LEN=10) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/mem.sv" Line 2. Module mem_MM(ADDR_LEN=13) doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionCache_MM
-Compiling module xil_defaultlib.IDSegReg
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.DataExt
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.EXSegReg
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.mem_MM(ADDR_LEN=13)
-Compiling module xil_defaultlib.main_mem(ADDR_LEN=10)
-Compiling module xil_defaultlib.cache(SET_ADDR_LEN=2,TAG_ADDR_LE...
-Compiling module xil_defaultlib.WBSegReg
-Compiling module xil_defaultlib.HarzardUnit
-Compiling module xil_defaultlib.RV32Core
-Compiling module xil_defaultlib.cpu_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot cpu_tb_behav
-
-****** Webtalk v2019.1 (64-bit)
-  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
-  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
-
-source D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim/xsim.dir/cpu_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 109.391 ; gain = 17.906
-INFO: [Common 17-206] Exiting Webtalk at Sun May 23 16:10:18 2021...
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 815.508 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '10' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "cpu_tb_behav -key {Behavioral:sim_1:Functional:cpu_tb} -tclbatch {cpu_tb.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source cpu_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'cpu_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 815.508 ; gain = 0.000
-current_wave_config {Untitled 2}
-Untitled 2
-add_wave {{/cpu_tb/RV32ICore_tb_inst/Instr}} 
-current_wave_config {Untitled 2}
-Untitled 2
-add_wave {{/cpu_tb/RV32ICore_tb_inst/WBSegReg1/cache_test_instance/main_mem_instance/mem_inst/ram_cell}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-run: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 815.508 ; gain = 0.000
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 815.508 ; gain = 0.000
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'cpu_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj cpu_tb_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/ASM-Benchmark/generate_inst/InstructionCache.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionCache_MM
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEMSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module cache
-WARNING: [VRFC 10-3824] variable 'free' must explicitly be declared as automatic or static [D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv:74]
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/main_mem.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module main_mem
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/mem.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mem_MM
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-"xelab -wto a722947a187646e6b81961758407f42f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot cpu_tb_behav xil_defaultlib.cpu_tb xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto a722947a187646e6b81961758407f42f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot cpu_tb_behav xil_defaultlib.cpu_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ControlUnit.v" Line 2. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ALU.v" Line 7. Module ALU doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv" Line 1. Module cache(SET_ADDR_LEN=2,TAG_ADDR_LEN=8) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/main_mem.sv" Line 2. Module main_mem(ADDR_LEN=10) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/mem.sv" Line 2. Module mem_MM(ADDR_LEN=13) doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionCache_MM
-Compiling module xil_defaultlib.IDSegReg
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.DataExt
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.EXSegReg
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.mem_MM(ADDR_LEN=13)
-Compiling module xil_defaultlib.main_mem(ADDR_LEN=10)
-Compiling module xil_defaultlib.cache(SET_ADDR_LEN=2,TAG_ADDR_LE...
-Compiling module xil_defaultlib.WBSegReg
-Compiling module xil_defaultlib.HarzardUnit
-Compiling module xil_defaultlib.RV32Core
-Compiling module xil_defaultlib.cpu_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot cpu_tb_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "cpu_tb_behav -key {Behavioral:sim_1:Functional:cpu_tb} -tclbatch {cpu_tb.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source cpu_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'cpu_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 815.508 ; gain = 0.000
-current_wave_config {Untitled 3}
-Untitled 3
-add_wave {{/cpu_tb/RV32ICore_tb_inst/Instr}} 
-current_wave_config {Untitled 3}
-Untitled 3
-add_wave {{/cpu_tb/RV32ICore_tb_inst/WBSegReg1/cache_test_instance/main_mem_instance/mem_inst}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 815.750 ; gain = 0.000
-run all
-run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 861.469 ; gain = 0.000
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'cpu_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj cpu_tb_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ControlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/DataExt.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataExt
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/EXSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EXSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/HarzardUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HarzardUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/IDSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IDSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/IFSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module IFSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ImmOperandUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ImmOperandUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/ASM-Benchmark/generate_inst/InstructionCache.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InstructionCache_MM
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/MEMSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEMSegReg
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/RV32Core.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RV32Core
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/RegisterFile.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/WBSegReg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WBSegReg
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module cache
-WARNING: [VRFC 10-3824] variable 'free' must explicitly be declared as automatic or static [D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv:74]
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/main_mem.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module main_mem
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/mem.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mem_MM
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-"xelab -wto a722947a187646e6b81961758407f42f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot cpu_tb_behav xil_defaultlib.cpu_tb xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto a722947a187646e6b81961758407f42f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot cpu_tb_behav xil_defaultlib.cpu_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ControlUnit.v" Line 2. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ALU.v" Line 7. Module ALU doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv" Line 1. Module cache(SET_ADDR_LEN=2,TAG_ADDR_LEN=8) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/main_mem.sv" Line 2. Module main_mem(ADDR_LEN=10) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/mem.sv" Line 2. Module mem_MM(ADDR_LEN=13) doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionCache_MM
-Compiling module xil_defaultlib.IDSegReg
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.DataExt
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.ImmOperandUnit
-Compiling module xil_defaultlib.EXSegReg
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.mem_MM(ADDR_LEN=13)
-Compiling module xil_defaultlib.main_mem(ADDR_LEN=10)
-Compiling module xil_defaultlib.cache(SET_ADDR_LEN=2,TAG_ADDR_LE...
-Compiling module xil_defaultlib.WBSegReg
-Compiling module xil_defaultlib.HarzardUnit
-Compiling module xil_defaultlib.RV32Core
-Compiling module xil_defaultlib.cpu_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot cpu_tb_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "cpu_tb_behav -key {Behavioral:sim_1:Functional:cpu_tb} -tclbatch {cpu_tb.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2019.1
-Time resolution is 1 ps
-source cpu_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'cpu_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 873.328 ; gain = 0.000
-current_wave_config {Untitled 4}
-Untitled 4
-add_wave {{/cpu_tb/RV32ICore_tb_inst/WBSegReg1/cache_test_instance/main_mem_instance/mem_inst}} 
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 873.328 ; gain = 0.000
-run all
-run: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 875.465 ; gain = 0.000
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-restart: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 876.301 ; gain = 0.000
-run all
-run: Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 882.238 ; gain = 5.938
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
 launch_simulation
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
@@ -495,7 +58,7 @@ INFO: [VRFC 10-311] analyzing module cache
 WARNING: [VRFC 10-3824] variable 'free' must explicitly be declared as automatic or static [D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv:74]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/main_mem.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module main_mem
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
 "xelab -wto a722947a187646e6b81961758407f42f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot cpu_tb_behav xil_defaultlib.cpu_tb xil_defaultlib.glbl -log elaborate.log"
@@ -532,7 +95,8 @@ Compiling module xil_defaultlib.RV32Core
 Compiling module xil_defaultlib.cpu_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot cpu_tb_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 757.090 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/USTC/CA2021_labs/new_lab3/new_lab3.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
@@ -551,17 +115,20 @@ source cpu_tb.tcl
 #   }
 # }
 # run 1000ns
+xsim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 783.680 ; gain = 26.590
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'cpu_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 894.285 ; gain = 0.000
-current_wave_config {Untitled 5}
-Untitled 5
-add_wave {{/cpu_tb/RV32ICore_tb_inst/WBSegReg1/cache_test_instance/main_mem_instance/mem_inst}} 
+launch_simulation: Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 783.680 ; gain = 26.590
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/cpu_tb/RV32ICore_tb_inst/WBSegReg1/cache_test_instance/main_mem_instance/mem_inst/ram_cell}} 
 restart
 INFO: [Simtcl 6-17] Simulation restarted
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/cpu_tb/RV32ICore_tb_inst/Instr}} 
 run all
-run: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1047.305 ; gain = 0.000
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Sun May 23 16:49:58 2021...
+INFO: [Common 17-206] Exiting Vivado at Sun May 23 20:44:35 2021...
