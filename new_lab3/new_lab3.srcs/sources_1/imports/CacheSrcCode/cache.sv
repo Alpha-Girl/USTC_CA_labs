@@ -2,7 +2,7 @@ module cache #(
            parameter LINE_ADDR_LEN = 3,  // line内地址⻓度，决定了每个line具有2^3个word
            parameter SET_ADDR_LEN = 3,  // 组地址⻓度，决定了一共有2^3=8组
            parameter TAG_ADDR_LEN = 6,  // tag⻓度
-           parameter WAY_CNT = 3 // 组相连度，决定了每组中有多少路line
+           parameter WAY_CNT = 4 // 组相连度，决定了每组中有多少路line
        )(
            input clk, rst,
            output miss,  // 对CPU发出的miss信号
@@ -56,7 +56,7 @@ end
 always @ ( * ) begin
     if (~cache_hit & (wr_req | rd_req))
     begin
-        //LRU策略选出冲突时换处的块
+        //LRU策略选出冲突时换出的块
         if (swap_out_strategy == LRU)
         begin
             for (integer i = 0; i < WAY_CNT; i = i + 1 )
@@ -84,11 +84,11 @@ always @ ( * ) begin
             if (free == 0)
             begin
                 for (integer i = 0;i < WAY_CNT ;i = i + 1)
-                begin //此时说明时最早进去的
+                begin //此时说明是最早进去的
                     if (FIFO_record[set_addr][i] == WAY_CNT)
                     begin
                         out_way = i;
-                        FIFO_record[set_addr][i] = 0; /*my adding*/
+                        FIFO_record[set_addr][i] = 0;
                         break;
                     end
                 end
@@ -106,12 +106,12 @@ always @ ( * ) begin
         end
     end
 end
-always @ (posedge clk or posedge rst) begin // ?? cache ???
+always @ (posedge clk or posedge rst) begin // cache 
     if (rst) begin
         cache_stat <= IDLE;
         time_cnt <= 0;
-        swap_out_strategy <= LRU;
-        //swap_out_strategy <= FIFO;
+        //swap_out_strategy <= LRU;
+        swap_out_strategy <= FIFO;
         for (integer i = 0;
                 i < SET_SIZE;
                 i = i + 1 ) begin
@@ -121,7 +121,7 @@ always @ (posedge clk or posedge rst) begin // ?? cache ???
                 dirty[i][j] = 1'b0;
                 valid[i][j] = 1'b0;
                 LRU_record[i][j] = 0;
-                FIFO_record[j][j] = 0;
+                FIFO_record[i][j] = 0;
             end
         end
         for (integer k = 0;

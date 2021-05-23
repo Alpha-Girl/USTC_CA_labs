@@ -7,13 +7,13 @@ Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ControlUnit.v" Line 2. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/imports/SourceCode/ALU.v" Line 7. Module ALU doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv" Line 1. Module cache(SET_ADDR_LEN=2,TAG_ADDR_LEN=8,WAY_CNT=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv" Line 1. Module cache(SET_ADDR_LEN=2,TAG_ADDR_LEN=8) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/main_mem.sv" Line 2. Module main_mem(ADDR_LEN=10) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/mem.sv" Line 2. Module mem_MM(ADDR_LEN=13) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/mem_QS.sv" Line 2. Module mem_QS(ADDR_LEN=13) doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.IFSegReg
-Compiling module xil_defaultlib.InstructionCache_MM
+Compiling module xil_defaultlib.InstructionCache_QS
 Compiling module xil_defaultlib.IDSegReg
 Compiling module xil_defaultlib.ControlUnit
 Compiling module xil_defaultlib.DataExt
@@ -22,7 +22,7 @@ Compiling module xil_defaultlib.ImmOperandUnit
 Compiling module xil_defaultlib.EXSegReg
 Compiling module xil_defaultlib.ALU
 Compiling module xil_defaultlib.MEMSegReg
-Compiling module xil_defaultlib.mem_MM(ADDR_LEN=13)
+Compiling module xil_defaultlib.mem_QS(ADDR_LEN=13)
 Compiling module xil_defaultlib.main_mem(ADDR_LEN=10)
 Compiling module xil_defaultlib.cache(SET_ADDR_LEN=2,TAG_ADDR_LE...
 Compiling module xil_defaultlib.WBSegReg

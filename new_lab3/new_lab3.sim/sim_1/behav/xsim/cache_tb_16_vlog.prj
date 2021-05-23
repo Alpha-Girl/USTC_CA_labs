@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv" \
+"../../../../new_lab3.srcs/sources_1/imports/CacheSrcCode/main_mem.sv" \
+"../../../../new_lab3.srcs/sources_1/imports/CacheSrcCode/mem.sv" \
+"../../../../new_lab3.srcs/sources_1/imports/CacheSrcCode/cache_tb_16.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

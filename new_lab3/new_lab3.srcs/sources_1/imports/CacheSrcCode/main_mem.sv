@@ -21,7 +21,7 @@ reg  [(ADDR_LEN + LINE_ADDR_LEN) - 1 : 0] mem_addr = 0;
 reg  [31:0] mem_wr_data = 0;
 wire [31:0] mem_rd_data;
 
-mem_MM #(
+mem_QS #(
     .ADDR_LEN  ( ADDR_LEN + LINE_ADDR_LEN    )
 ) mem_inst (
     .clk       (  clk           ),

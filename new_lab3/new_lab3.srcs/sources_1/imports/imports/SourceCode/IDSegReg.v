@@ -43,7 +43,7 @@ module IDSegReg(
         else if(en)
             PCD <= clear ? 0: PCF;
     wire [31:0] tmp;
-    InstructionCache_MM InstructionRam (
+    InstructionCache_QS InstructionRam (
          .clk    ( clk        ),
          .web    (1'b0),
          .addra(A[31:2]),
