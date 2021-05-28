@@ -8,7 +8,7 @@ verilog xil_defaultlib  \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/IDSegReg.v" \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/IFSegReg.v" \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/ImmOperandUnit.v" \
-"../../../../new_lab3.srcs/sources_1/ASM-Benchmark/generate_inst/InstructionCache_QS.v" \
+"../../../../new_lab3.srcs/sources_1/ASM-Benchmark/generate_inst/InstructionCache.v" \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/MEMSegReg.v" \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/RV32Core.v" \
 "../../../../new_lab3.srcs/sources_1/imports/imports/SourceCode/RegisterFile.v" \
@@ -17,6 +17,7 @@ verilog xil_defaultlib  \
 sv xil_defaultlib  \
 "../../../../new_lab3.srcs/sources_1/imports/CacheSrcCode/cache.sv" \
 "../../../../new_lab3.srcs/sources_1/imports/CacheSrcCode/main_mem.sv" \
+"../../../../new_lab3.srcs/sources_1/imports/CacheSrcCode/mem.sv" \
 
 verilog xil_defaultlib  \
 "../../../../new_lab3.srcs/sim_1/imports/lab3/CPUSrcCode/Testbench/cpu_tb.v" \

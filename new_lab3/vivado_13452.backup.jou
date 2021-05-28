@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri May 28 12:53:08 2021
+# Process ID: 13452
+# Current directory: D:/USTC/CA2021_labs/new_lab3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2580 D:\USTC\CA2021_labs\new_lab3\new_lab3.xpr
+# Log file: D:/USTC/CA2021_labs/new_lab3/vivado.log
+# Journal file: D:/USTC/CA2021_labs/new_lab3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/USTC/CA2021_labs/new_lab3/new_lab3.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/mem_QS.sv] -no_script -reset -force -quiet
+remove_files  D:/USTC/CA2021_labs/new_lab3/new_lab3.srcs/sources_1/imports/CacheSrcCode/mem_QS.sv
+launch_simulation
+source cpu_tb.tcl
+current_wave_config {Untitled 1}
+add_wave {{/cpu_tb/RV32ICore_tb_inst/WBSegReg1/hit_count}} 
+current_wave_config {Untitled 1}
+add_wave {{/cpu_tb/RV32ICore_tb_inst/WBSegReg1/miss_count}} 
+current_wave_config {Untitled 1}
+add_wave {{/cpu_tb/RV32ICore_tb_inst/WBSegReg1/cache_test_instance/main_mem_instance/mem_inst/ram_cell}} 
+restart
+run all
+close_sim

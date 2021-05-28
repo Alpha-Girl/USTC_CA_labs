@@ -2,7 +2,7 @@ module cache #(
            parameter LINE_ADDR_LEN = 3,  // line内地址⻓度，决定了每个line具有2^3个word
            parameter SET_ADDR_LEN = 3,  // 组地址⻓度，决定了一共有2^3=8组
            parameter TAG_ADDR_LEN = 6,  // tag⻓度
-           parameter WAY_CNT = 4 // 组相连度，决定了每组中有多少路line
+           parameter WAY_CNT = 8 // 组相连度，决定了每组中有多少路line
        )(
            input clk, rst,
            output miss,  // 对CPU发出的miss信号
@@ -110,8 +110,8 @@ always @ (posedge clk or posedge rst) begin // cache
     if (rst) begin
         cache_stat <= IDLE;
         time_cnt <= 0;
-        //swap_out_strategy <= LRU;
-        swap_out_strategy <= FIFO;
+        swap_out_strategy <= LRU;
+        //swap_out_strategy <= FIFO;
         for (integer i = 0;
                 i < SET_SIZE;
                 i = i + 1 ) begin

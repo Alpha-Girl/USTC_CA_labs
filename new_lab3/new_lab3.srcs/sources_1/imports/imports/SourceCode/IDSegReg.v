@@ -1,4 +1,4 @@
-//IDSegReg是指译码阶段的段寄存器，存储�??前一阶段取到的指令，供译码段使用
+//IDSegReg是指译码阶段的段寄存器，存储�???前一阶段取到的指令，供译码段使用
 module IDSegReg(
     input wire clk,
     input wire rst,
@@ -43,7 +43,7 @@ module IDSegReg(
         else if(en)
             PCD <= clear ? 0: PCF;
     wire [31:0] tmp;
-    InstructionCache_QS InstructionRam (
+    InstructionCache_MM InstructionRam (
          .clk    ( clk        ),
          .web    (1'b0),
          .addra(A[31:2]),

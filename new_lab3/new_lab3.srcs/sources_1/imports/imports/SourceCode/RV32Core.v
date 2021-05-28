@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: USTC 嵌入式系统实验室 ESLAB
-// Engineer: Haojun Xia(xhjustc@mail.ustc.edu.cn)
+// Engineer: 
 // 
-// Create Date: 2019/02/08 16:29:41
+// Create Date: 
 // Design Name: RISCV-Pipline CPU
 // Module Name: RV32Core
 // Target Devices: Nexys4
@@ -93,7 +93,7 @@ module RV32Core(
     wire [1:0] Forward2E;
     wire [1:0] LoadedBytesSelect;
     wire DCacheMiss, StallE, StallM, StallW;
-    //中间变量声明和赋�?
+    //中间变量声明和赋�?
     assign Rs1D = Instr[19:15];
     assign Rs2D = Instr[24:20];
     assign RdD = Instr[11:7];
