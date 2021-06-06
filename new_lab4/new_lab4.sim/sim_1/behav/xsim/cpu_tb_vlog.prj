@@ -1,0 +1,54 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/ALU.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/IdExSegReg/AddrEx.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/ExMemSegReg/AddrMem.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/MemWbSegReg/AddrWb.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/IdExSegReg/BrTarget.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/BranchDecision.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/CSRRegister.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/ControllerDecoder.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/IdExSegReg/CtrlEx.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/ExMemSegReg/CtrlMem.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/MemWbSegReg/CtrlWb.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/DataExtend.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/GeneralRegister.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/Hazard.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/IfIdSegReg/IR.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/ImmExtend.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/Cache/InstructionCache.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/NPCGenerator.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/IdExSegReg/Op1.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/IdExSegReg/Op2.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/PC.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/IdExSegReg/PcEx.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/IfIdSegReg/PcId.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/RV32ICore.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/IdExSegReg/Reg2Ex.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/ExMemSegReg/Reg2Mem.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/ExMemSegReg/Result.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/MemWbSegReg/WbData.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/csrALU.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/MemWbSegReg/csrAddrwb.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/ExMemSegReg/csrAex.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/IdExSegReg/csrAid.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/ExMemSegReg/csrDex.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/IdExSegReg/csrDid.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/MemWbSegReg/csrDwb.v" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/ExMemSegReg/csrex.v" \
+
+sv xil_defaultlib  \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/bht.sv" \
+"../../../../new_lab4.srcs/sources_1/imports/lab4-2-Srccode/btb.sv" \
+"../../../../new_lab4.srcs/sources_1/imports/CacheSrcCode/cache.sv" \
+"../../../../new_lab4.srcs/sources_1/imports/CacheSrcCode/main_mem.sv" \
+"../../../../new_lab4.srcs/sources_1/imports/CacheSrcCode/mem.sv" \
+
+verilog xil_defaultlib  \
+"../../../../new_lab4.srcs/sim_1/imports/Simulation/cpu_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

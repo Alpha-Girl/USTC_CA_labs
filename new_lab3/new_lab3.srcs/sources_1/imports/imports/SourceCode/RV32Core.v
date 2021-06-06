@@ -13,48 +13,43 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module RV32Core(
     input wire CPU_CLK,
-    input wire CPU_RST
+    input wire CPU_RST,
+    input wire [31:0] CPU_Debug_DataRAM_A2,
+    input wire [31:0] CPU_Debug_DataRAM_WD2,
+    input wire [3:0] CPU_Debug_DataRAM_WE2,
+    output wire [31:0] CPU_Debug_DataRAM_RD2,
+    input wire [31:0] CPU_Debug_InstRAM_A2,
+    input wire [31:0] CPU_Debug_InstRAM_WD2,
+    input wire [ 3:0] CPU_Debug_InstRAM_WE2,
+    output wire [31:0] CPU_Debug_InstRAM_RD2
     );
-    //变量声明
-    wire StallF;
+	//wire values definitions
+    wire StallF, FlushF, StallD, FlushD, StallE, FlushE, StallM, FlushM, StallW, FlushW;
     wire [31:0] PC_In;
     wire [31:0] PCF;
-    wire FlushD;
-    wire StallD;
-    wire [31:0] Instr;
-    wire [31:0] NPCF;
-    wire [31:0] PCD;
-    wire JalD;
-    wire JalrD;
+    wire [31:0] Instr, PCD;
+    wire JalD, JalrD, LoadNpcD, MemToRegD, AluSrc1D;
     wire [2:0] RegWriteD;
-    wire MemToRegD;
     wire [3:0] MemWriteD;
-    wire LoadNpcD;
-    wire BranchD;
+    wire [1:0] RegReadD;
+    wire [2:0] BranchTypeD;
     wire [4:0] AluContrlD;
-    wire AluSrc1D;
     wire [1:0] AluSrc2D;
     wire [2:0] RegWriteW;
     wire [4:0] RdW;
     wire [31:0] RegWriteData;
-    wire [31:0] RegWriteDataExt;
-    wire [31:0] RF_RD1;
-    wire [31:0] RF_RD2;
+    wire [31:0] DM_RD_Ext;
     wire [2:0] ImmType;
     wire [31:0] ImmD;
-    wire FlushE;
-    wire [31:0] BrPCD;
-    wire [31:0] BrPCE;
+    wire [31:0] JalNPC;
+    wire [31:0] BrNPC; 
     wire [31:0] ImmE;
-    wire [4:0] RdD;
-    wire [4:0] RdE;
-    wire [4:0] Rs1D;
-    wire [4:0] Rs1E;
-    wire [4:0] Rs2D;
-    wire [4:0] Rs2E;
+    wire [6:0] OpCodeD, Funct7D;
+    wire [2:0] Funct3D;
+    wire [4:0] Rs1D, Rs2D, RdD;
+    wire [4:0] Rs1E, Rs2E, RdE;
     wire [31:0] RegOut1D;
     wire [31:0] RegOut1E;
     wire [31:0] RegOut2D;
@@ -64,7 +59,9 @@ module RV32Core(
     wire MemToRegE;
     wire [3:0] MemWriteE;
     wire LoadNpcE;
-    wire [4:0] AluContrlE;
+    wire [1:0] RegReadE;
+    wire [2:0] BranchTypeE;
+    wire [3:0] AluContrlE;
     wire AluSrc1E;
     wire [1:0] AluSrc2E;
     wire [31:0] Operand1;
@@ -78,7 +75,6 @@ module RV32Core(
     wire [31:0] StoreDataM; 
     wire [4:0] RdM;
     wire [31:0] PCM;
-    wire [31:0] NPCM;
     wire [2:0] RegWriteM;
     wire MemToRegM;
     wire [3:0] MemWriteM;
@@ -87,93 +83,107 @@ module RV32Core(
     wire [31:0] ResultM;
     wire [31:0] ResultW;
     wire MemToRegW;
-    wire Forward1D;
-    wire Forward2D;
     wire [1:0] Forward1E;
     wire [1:0] Forward2E;
     wire [1:0] LoadedBytesSelect;
-    wire DCacheMiss, StallE, StallM, StallW;
-    //中间变量声明和赋�?
-    assign Rs1D = Instr[19:15];
-    assign Rs2D = Instr[24:20];
-    assign RdD = Instr[11:7];
-    assign PC_In=JalrE?(AluOutE):( BranchE?(BrPCE):( JalD?(BrPCD):(NPCF) ) );
-    assign NPCF=PCF+4;
-    assign RegOut1D=Forward1D?AluOutM:RF_RD1;
-    assign RegOut2D=Forward2D?AluOutM:RF_RD2;
-    assign BrPCD=ImmD+PCD;
-    assign NPCM = PCM+4;
-    assign ForwardData1 = Forward1E[1]?(AluOutM):( Forward1E[0]?RegWriteDataExt:RegOut1E );
+    //wire values assignments
+    assign {Funct7D, Rs2D, Rs1D, Funct3D, RdD, OpCodeD} = Instr;
+    assign JalNPC=ImmD+PCD;
+    assign ForwardData1 = Forward1E[1]?(AluOutM):( Forward1E[0]?RegWriteData:RegOut1E );
     assign Operand1 = AluSrc1E?PCE:ForwardData1;
-    assign ForwardData2 = Forward2E[1]?(AluOutM):( Forward2E[0]?RegWriteDataExt:RegOut2E );
+    assign ForwardData2 = Forward2E[1]?(AluOutM):( Forward2E[0]?RegWriteData:RegOut2E );
     assign Operand2 = AluSrc2E[1]?(ImmE):( AluSrc2E[0]?Rs2E:ForwardData2 );
-    assign ResultM = LoadNpcM?NPCM:AluOutM;
-    assign RegWriteData = ~MemToRegW?ResultW:DM_RD;
-    //模块调用
+    assign ResultM = LoadNpcM ? (PCM+4) : AluOutM;
+    assign RegWriteData = ~MemToRegW?ResultW:DM_RD_Ext;
+
+    //Module connections
+    // ---------------------------------------------
+    // PC-IF
+    // ---------------------------------------------
+    NPC_Generator NPC_Generator1(
+        .PCF(PCF),
+        .JalrTarget(AluOutE), 
+        .BranchTarget(BrNPC), 
+        .JalTarget(JalNPC),
+        .BranchE(BranchE),
+        .JalD(JalD),
+        .JalrE(JalrE),
+        .PC_In(PC_In)
+    );
+    wire [31:0] PC_4;
+assign PC_4 = PCF + 4;
     IFSegReg IFSegReg1(
         .clk(CPU_CLK),
-        .rst(CPU_RST),
         .en(~StallF),
+        .clear(FlushF), 
         .PC_In(PC_In),
-        .PC(PCF)
-        );
+        .PCF(PCF)
+    );
+
+    // ---------------------------------------------
+    // ID stage
+    // ---------------------------------------------
     IDSegReg IDSegReg1(
         .clk(CPU_CLK),
-        .rst(CPU_RST),
         .clear(FlushD),
         .en(~StallD),
         .A(PCF),
         .RD(Instr),
+        .A2(CPU_Debug_InstRAM_A2),
+        .WD2(CPU_Debug_InstRAM_WD2),
+        .WE2(CPU_Debug_InstRAM_WE2),
+        .RD2(CPU_Debug_InstRAM_RD2),
         .PCF(PCF),
         .PCD(PCD) 
-        );
+    );
+
     ControlUnit ControlUnit1(
-        .Op(Instr[6:0]),
-        .Fn3(Instr[14:12]),
-        .Fn7(Instr[31:25]),
+        .Op(OpCodeD),
+        .Fn3(Funct3D),
+        .Fn7(Funct7D),
         .JalD(JalD),
         .JalrD(JalrD),
         .RegWriteD(RegWriteD),
         .MemToRegD(MemToRegD),
         .MemWriteD(MemWriteD),
         .LoadNpcD(LoadNpcD),
-        .BranchD(BranchD),
+        .RegReadD(RegReadD),
+        .BranchTypeD(BranchTypeD),
         .AluContrlD(AluContrlD),
         .AluSrc1D(AluSrc1D),
         .AluSrc2D(AluSrc2D),
         .ImmType(ImmType)
-        );
-    DataExt DataExt1(
-        .IN(RegWriteData),
-        .ADDR(LoadedBytesSelect),
-        .WE3(RegWriteW),
-        .OUT(RegWriteDataExt)
-        );
-    RegisterFile RegisterFile1(
-        .clk(CPU_CLK),
-        .rst(CPU_RST),
-        .WE3(RegWriteW),
-        .A1(Instr[19:15]),
-        .A2(Instr[24:20]),
-        .A3(RdW),
-        .WD3(RegWriteDataExt),
-        .RD1(RF_RD1),
-        .RD2(RF_RD2)
-        );
+    );
+
     ImmOperandUnit ImmOperandUnit1(
         .In(Instr[31:7]),
         .Type(ImmType),
         .Out(ImmD)
-        );
-    EXSegReg EXSegReg1(
+    );
+
+    RegisterFile RegisterFile1(
         .clk(CPU_CLK),
         .rst(CPU_RST),
+        .WE3(|RegWriteW),
+        .A1(Rs1D),
+        .A2(Rs2D),
+        .A3(RdW),
+        .WD3(RegWriteData),
+        .RD1(RegOut1D),
+        .RD2(RegOut2D)
+    );
+
+    // ---------------------------------------------
+    // EX stage
+    // ---------------------------------------------
+    EXSegReg EXSegReg1(
+        .clk(CPU_CLK),
         .en(~StallE),
         .clear(FlushE),
         .PCD(PCD),
         .PCE(PCE), 
-        .BrPCD(BrPCD),
-        .BrPCE(BrPCE), 
+        .JalNPC(JalNPC),
+        .BrNPC(BrNPC), 
         .ImmD(ImmD),
         .ImmE(ImmE),
         .RdD(RdD),
@@ -196,24 +206,39 @@ module RV32Core(
         .MemWriteE(MemWriteE),
         .LoadNpcD(LoadNpcD),
         .LoadNpcE(LoadNpcE),
+        .RegReadD(RegReadD),
+        .RegReadE(RegReadE),
+        .BranchTypeD(BranchTypeD),
+        .BranchTypeE(BranchTypeE),
         .AluContrlD(AluContrlD),
         .AluContrlE(AluContrlE),
         .AluSrc1D(AluSrc1D),
         .AluSrc1E(AluSrc1E),
         .AluSrc2D(AluSrc2D),
         .AluSrc2E(AluSrc2E)
-        );
+    	); 
+
     ALU ALU1(
         .Operand1(Operand1),
         .Operand2(Operand2),
         .AluContrl(AluContrlE),
-        .Branch(BranchE),
         .AluOut(AluOutE)
+    	);
+
+    BranchDecisionMaking BranchDecisionMaking1(
+        .BranchTypeE(BranchTypeE),
+        .Operand1(Operand1),
+        .Operand2(Operand2),
+        .BranchE(BranchE)
         );
+
+    // ---------------------------------------------
+    // MEM stage
+    // ---------------------------------------------
     MEMSegReg MEMSegReg1(
         .clk(CPU_CLK),
-        .rst(CPU_RST),
         .en(~StallM),
+        .clear(FlushM),
         .AluOutE(AluOutE),
         .AluOutM(AluOutM), 
         .ForwardData2(ForwardData2),
@@ -230,17 +255,24 @@ module RV32Core(
         .MemWriteM(MemWriteM),
         .LoadNpcE(LoadNpcE),
         .LoadNpcM(LoadNpcM)
-        );
+    );
+
+    // ---------------------------------------------
+    // WB stage
+    // ---------------------------------------------
     WBSegReg WBSegReg1(
         .clk(CPU_CLK),
-        .rst(CPU_RST),
         .en(~StallW),
-        .CacheMiss(DCacheMiss),
+        .clear(FlushW),
         .A(AluOutM),
         .WD(StoreDataM),
         .WE(MemWriteM),
         .RD(DM_RD),
         .LoadedBytesSelect(LoadedBytesSelect),
+        .A2(CPU_Debug_DataRAM_A2),
+        .WD2(CPU_Debug_DataRAM_WD2),
+        .WE2(CPU_Debug_DataRAM_WE2),
+        .RD2(CPU_Debug_DataRAM_RD2),
         .ResultM(ResultM),
         .ResultW(ResultW), 
         .RdM(RdM),
@@ -249,35 +281,74 @@ module RV32Core(
         .RegWriteW(RegWriteW),
         .MemToRegM(MemToRegM),
         .MemToRegW(MemToRegW)
-        );
+    );
+    
+    DataExt DataExt1(
+        .IN(DM_RD),
+        .LoadedBytesSelect(LoadedBytesSelect),
+        .RegWriteW(RegWriteW),
+        .OUT(DM_RD_Ext)
+    );
+    // ---------------------------------------------
+    // Harzard Unit
+    // ---------------------------------------------
     HarzardUnit HarzardUnit1(
-        .BranchD(BranchD),
+        .CpuRst(CPU_RST),
         .BranchE(BranchE),
-        .JalrD(JalrD),
         .JalrE(JalrE),
         .JalD(JalD),
         .Rs1D(Rs1D),
         .Rs2D(Rs2D),
         .Rs1E(Rs1E),
         .Rs2E(Rs2E),
+        .RegReadE(RegReadE),
         .MemToRegE(MemToRegE),
-        .RegWriteE(RegWriteE),
         .RdE(RdE),
         .RdM(RdM),
         .RegWriteM(RegWriteM),
         .RdW(RdW),
         .RegWriteW(RegWriteW),
-        .DCacheMiss(DCacheMiss),
+        .ICacheMiss(1'b0),
+        .DCacheMiss(1'b0),
         .StallF(StallF),
-        .FlushD(FlushD),
+        .FlushF(FlushF),
         .StallD(StallD),
-        .FlushE(FlushE),
+        .FlushD(FlushD),
         .StallE(StallE),
+        .FlushE(FlushE),
         .StallM(StallM),
+        .FlushM(FlushM),
         .StallW(StallW),
-        .Forward1D(Forward1D),
-        .Forward2D(Forward2D),
+        .FlushW(FlushW),
         .Forward1E(Forward1E),
         .Forward2E(Forward2E)
-        );             
+    	);    
+            // ---------------------------------------------
+    // btb Unit
+    // ---------------------------------------------
+    btb #(
+        .ENTRY_NUM(64)
+    ) btb1 (
+        .clk(CPU_CLK), 
+        .rst(CPU_RST), 
+        .PC_IF(PC_4), 
+        .PC_EX(PCE), 
+        .br_target(BrNPC),
+        .br(BranchE), 
+        .Opcode_EX(PCE[31:26]), 
+        .PredictPC(PredictPC), 
+        .PredictPCValid(PredictPCValid)
+    );
+    // ---------------------------------------------
+    // bht Unit
+    // ---------------------------------------------
+    bht bht1 (
+        .clk(CPU_CLK), 
+        .rst(CPU_RST), 
+        .tag(PC_4[9:2]), 
+        .tagE(PCE[9:2]),
+        .br(BranchE), 
+        .Opcode_EX(PCE[31:26]), 
+        .PredictF(PredictF)
+    );         
 endmodule

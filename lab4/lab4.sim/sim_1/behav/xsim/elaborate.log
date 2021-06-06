@@ -1,0 +1,57 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/XIlinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 2f5a9faca17b4bb687b0435a608b68e9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot cpu_tb_behav xil_defaultlib.cpu_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 32 for port 'csrAmem' [D:/USTC/CA2021_labs/lab4/lab4.srcs/sources_1/imports/lab4-2-Srccode/RV32ICore.v:478]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 32 for port 'csrAwb' [D:/USTC/CA2021_labs/lab4/lab4.srcs/sources_1/imports/lab4-2-Srccode/RV32ICore.v:479]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'cache_write_en_EX' [D:/USTC/CA2021_labs/lab4/lab4.srcs/sources_1/imports/lab4-2-Srccode/RV32ICore.v:517]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/USTC/CA2021_labs/lab4/lab4.srcs/sources_1/imports/lab4-2-Srccode/MemWbSegReg/QS.sv" Line 2. Module mem_QS(ADDR_LEN=12) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.NPC_Generator
+Compiling module xil_defaultlib.PC_IF
+Compiling module xil_defaultlib.PC_ID
+Compiling module xil_defaultlib.InstructionCache
+Compiling module xil_defaultlib.IR_ID
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CSRRegisterFile
+Compiling module xil_defaultlib.ControllerDecoder
+Compiling module xil_defaultlib.ImmExtend
+Compiling module xil_defaultlib.PC_EX
+Compiling module xil_defaultlib.BR_Target_EX
+Compiling module xil_defaultlib.Op1_EX
+Compiling module xil_defaultlib.Op2_EX
+Compiling module xil_defaultlib.Reg2_EX
+Compiling module xil_defaultlib.Addr_EX
+Compiling module xil_defaultlib.csrDid
+Compiling module xil_defaultlib.csrAddrid
+Compiling module xil_defaultlib.Ctrl_EX
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.csrALU
+Compiling module xil_defaultlib.BranchDecision
+Compiling module xil_defaultlib.Result_MEM
+Compiling module xil_defaultlib.Reg2_MEM
+Compiling module xil_defaultlib.Addr_MEM
+Compiling module xil_defaultlib.csrex
+Compiling module xil_defaultlib.csrDex
+Compiling module xil_defaultlib.csrAddrex
+Compiling module xil_defaultlib.Ctrl_MEM
+Compiling module xil_defaultlib.DataExtend
+Compiling module xil_defaultlib.mem_QS(ADDR_LEN=12)
+Compiling module xil_defaultlib.main_mem(ADDR_LEN=9)
+Compiling module xil_defaultlib.cache(WAY_CNT=3)
+Compiling module xil_defaultlib.WB_Data_WB
+Compiling module xil_defaultlib.Addr_WB
+Compiling module xil_defaultlib.csrDwb
+Compiling module xil_defaultlib.csrAddrwb
+Compiling module xil_defaultlib.Ctrl_WB
+Compiling module xil_defaultlib.HarzardUnit
+Compiling module xil_defaultlib.btb
+Compiling module xil_defaultlib.bht
+Compiling module xil_defaultlib.RV32ICore
+Compiling module xil_defaultlib.cpu_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot cpu_tb_behav
