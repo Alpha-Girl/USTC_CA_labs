@@ -1,0 +1,204 @@
+\documentclass{ctexart}
+\usepackage{amsmath,bm}
+\usepackage{setspace}
+\usepackage{xeCJK}
+\usepackage{xcolor}
+\usepackage{indentfirst}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{amsfonts,amssymb}
+\usepackage[a4paper,scale=0.8]{geometry}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{changepage}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{
+basicstyle=\small,%
+escapeinside=``,%
+keywordstyle=\color{blue} \bfseries,% \underbar,%
+identifierstyle={},%
+commentstyle=\color{green},%
+stringstyle=\ttfamily,%
+%labelstyle=\tiny,%
+extendedchars=false,%
+linewidth=\textwidth,%
+numbers=left,%
+numberstyle=\tiny \color{blue},%
+frame=trbl%
+}
+
+
+\lstset{breaklines}%这条命令可以让LaTeX自动将长的代码行换行排版
+
+\lstset{extendedchars=false}%这一条命令可以解决代码跨页时，章节标题，页眉等汉字不显示的问题
+\setCJKmainfont{华光书宋_CNKI}
+\newCJKfontfamily\kaiti{华光楷体_CNKI}
+\newCJKfontfamily\hei{华光黑体_CNKI}
+\newCJKfontfamily\fsong{华光仿宋_CNKI}
+\newfontfamily\code{Courier New}
+\linespread{1.5} \setlength\parindent{2 em}
+\title{\Huge 中国科学技术大学计算机学院\\《计算机体系结构》作业}
+\date{\LARGE 2021.06.07}
+\begin{document}
+\begin{hei}  \maketitle\end{hei}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.4]{USTC.png}
+
+\end{figure}
+\begin{LARGE}\begin{align*}            & \text{作业题目：\underline{第六章作业}} \\
+         & \text{学生姓名：\underline{胡毅翔}}     \\
+         & \text{学生学号：\underline{PB18000290}}\end{align*}\end{LARGE}
+\par
+\par\par
+\centerline{\large 计算机实验教学中心制}
+\par \centerline {\large 2019年9月}
+\newpage
+\begin{enumerate}
+    \item[第一题]
+          在以下的循环中，找出所有真相关、输出相关和反相关。通过重命名来消除输出相关和反相关。
+          \begin{lstlisting}[language=C]
+for(i = 0; i < 100; i++){
+    A[i] = A[i] * B[i];  /* S1 */
+    B[i] = A[i] + c;     /* S2 */
+    A[i] = C[i] * c;     /* S3 */
+    C[i] = D[i] * A[i];  /* S4 */
+}
+\end{lstlisting}
+          \par 解：
+          \par 真相关：S1到S2基于A[i]，S3到S4基于A[i]。
+          \par 输出相关：S1到S3基于A[i]。
+          \par 反相关：S3到S4基于C[i]。
+          \par 修改代码如下：
+          \begin{lstlisting}[language=C]
+for(i = 0; i < 100; i++){
+    T[i] = A[i] * B[i];  
+    B1[i] = T[i] + c;     
+    A1[i] = C[i] * c;     
+    C1[i] = D[i] * A1[i];  
+}
+\end{lstlisting}
+    \item[第二题] 考 虑 以 下 代 码 ， 它 将 两 个 包 含 单 精 度 复 数 值 的 向 量 相 乘:
+          \begin{lstlisting}[language=C]
+for ( i = 0; i < 300; i++){
+    c_re[i] = a_re[i] * b_re[i] - a_im[i] * b_im[i];
+    c_im[i] = a_re[i] * b_im[i] + a_im[i] * b_re[i];
+}
+\end{lstlisting}
+          假定处理器的运行频率为 $700 \mathrm{MHz}$ ，最大向量长度为 64 。
+          载入/存储单元的启动开销为 $15 $个时 钟周期，
+          乘法单元为 $8$ 个时钟周期，加法/减法单元为 $5$ 个时钟周期。
+          \begin{enumerate}
+              \item 这个内核的运算密度为多少? 给出理由。
+                    \par 解：
+                    \par 这一代码每$6$个FLOP，读$4$个浮点数，写$2$个浮点数。所以，运算密度$=6/6=1$。
+              \item 将此循环转换为使用条带挖掘的 $\mathrm{VMIPS}$ 汇编代码。
+                    \par 解：
+                    \par 假设$MVL=64$：
+                    \begin{lstlisting}[language={[x86masm]Assembler}]
+    li      $VL,44          # perform the first 44 ops
+    li      $r1,0           # initialize index
+loop:
+    lv      $v1,a_re+$r1    # load a_re
+    lv      $v3,b_re+$r1    # load b_re
+    mulvv.s $v5,$v1,$v3     # a_re * b_re 
+    lv      $v2,a_im+$r1    # load a_im
+    lv      $v4,b_im+$r1    # load b_im
+    mulvv.s $v6,$v2,$v4     # a_im * b_im   
+    subvv.s $v5,$v5,$v6     # a_re * b_re - a_im * b_im
+    sv      $v5,c_re+$r1    # store c_re
+    mulvv.s $v5,$v1,$v4     # a_re * b_im
+    mulvv.s $v6,$v2,$v3     # a_im * b_re
+    addvv.s $v5,$v5,$v6     # a_re * b_im + a_im * b_re
+    sv      $v5,c_im+$r1    # store c_im
+    bne     $r1,0,else      # check if first iteration
+    addi    $r1,$r1,#44     # first iteration, increment by 44
+    j loop                  # guarabteed bext iteration
+else:
+    addi    $r1,$r1,#256    # not first iteration, increment by 256
+skip:
+    blt     $r1,1200,loop   # next iteration?
+\end{lstlisting}
+              \item  假定采用链接和单一存储器流水线，需要多少次钟鸣?
+                    每个复数结果值需要多少 个时钟周期（包括启动开销在内）?
+                    \par 解：
+                    $$
+                        \begin{array}{lll}
+                            mulvv.s & lv      & \#\ a\_re\ *\ b\_re,\ load\ a\_im               \\
+                            lv      & mulvv.s & \#\ load\ b\_im,\ a\_im\ *\ b\_im               \\
+                            subvv.s & sv      & \#\ substract\ and\ store\ c\_re                \\
+                            mulvv.s & lv      & \#\ a\_re\ *\ b\_im,\ load\ next\ a\_re\ vector \\
+                            mulvv.s & lv      & \#\ a\_im\ *\ b\_re,\ load\ next\ b\_re\ vector \\
+                            addvv.s & sv      & \#\ add\ and\ store\ c\_im
+                        \end{array}
+                    $$
+                    \par 需要6次钟鸣。
+                    \par 每次循环的周期数$=6\mathrm{chimes}\times 64\mathrm{elements}+15\mathrm{cycles(load/store)}
+                        \times6+8\mathrm{cycles(multiply)}\times 4+5\mathrm{cycles(add/substract)}
+                        \times 2=516$
+                    \par 每个复数结果值需要的周期数$=516/128=4$
+              \item 如果向量序列被链接在一起，每个复数结果值需要多少
+                    个时钟周期 (包含开销 ) ?
+                    \par 解:
+                    \par 每次循环的周期数$=6\mathrm{chimes}\times 64\mathrm{elements}+15\mathrm{cycles(load/store)}
+                        \times6+8\mathrm{cycles(multiply)}\times 4+5\mathrm{cycles(add/substract)}
+                        \times 2=516$
+                    \par 每个复数结果值需要的周期数$=516/128=4$
+          \end{enumerate}
+
+    \item[第三题] 假定有一种包含 $10$ 个 $\mathrm{SIMD}$ 处理器的
+          $\mathrm{GPU}$ 体系结构。每条 $\mathrm{SIMD}$ 指令的宽度 为 $32$，
+          每个 $\mathrm{SIMD}$处理器包含 $8$ 个车道，用于执行单精度运算和
+          载入/存储指令，也就是说, 每个非分岔$\mathrm{SIMD}$指令每 $4$ 个时钟周期
+          可以生成 $32$ 个结果。假定内核的分岔分支将导致平均 $80 \%$ 的线程为活
+          动的。假定在所执行的全部 $\mathrm{SIMD}$ 指令中， $70 \%$ 为单精度运
+          算、20\%为载人/ 存储。由于并不包含所有存储器延迟, 所以假定
+          $\mathrm{SIMD}$ 指令平均发射率为 $0.85$ 。假定 $\mathrm{GPU}$ 的时
+          钟速度为 $1.5 \mathrm{GHz}$。
+          \begin{enumerate}
+              \item 计算这个内核在这个 $\mathrm{GPU}$上的吞吐量，单位为 $\mathrm{GFLOP/s}$。
+                    \par 解：
+                    \par 吞吐量为$1.5\mathrm{GHz}\times 0.80\times 0.85\times 0.70\times 10cores\times32/4=57.12\mathrm{GFLOP/s}$。
+
+              \item 假定我们有以下选项:\begin{enumerate}
+                        \item 将单精度车道数增大至 $16$。
+                        \item 将 $\mathrm{SIMD}$ 处理器数增大至 $15 $( 假定这一改变
+                              不会影响所有其他性能度量，代码会扩展到增 加的处理器上）。
+                        \item 添加缓存可以有效地将存储器延迟缩减 $40 \%$, 这样会将指令发射率增加至 $0.95$, 对于这些改
+                              进中的每一项。
+
+
+                    \end{enumerate}
+
+
+                    \par 吞吐裏的加速比为多少?
+                    \par 解：
+                    \begin{enumerate}
+                        \item $1.5\mathrm{GHz}\times 0.80\times 0.85\times 0.70\times 10\mathrm{cores}\times32/2=114.24\mathrm{GFLOP/s}$
+                              \par $\mathrm{Speedup}=114.24/57.12=2$
+                        \item $1.5\mathrm{GHz}\times 0.80\times 0.85\times 0.70\times 15\mathrm{cores}\times32/4=85.68\mathrm{GFLOP/s}$
+                              \par $\mathrm{Speedup}=85.68/57.12=1.5$
+                        \item $1.5\mathrm{GHz}\times 0.80\times 0.95\times 0.70\times 10\mathrm{cores}\times32/4= 63.84\mathrm{GFLOP/s}$
+                              \par $\mathrm{Speedup}=63.84/57.12=1.11$
+                    \end{enumerate}
+          \end{enumerate}
+
+    \item[第四题]  假定一个虚设 $\mathrm{GPU}$ 具有以下特性:
+          \begin{itemize}
+              \item 时钟频率为 $1.5 \mathrm{GHz}$;
+              \item 包含 16 个 SIMD处理器，每个处理器包含 16 个单精度浮点单元;
+              \item 片外存储器带宽为 $100 \mathrm{GB/s}$。
+          \end{itemize}
+          不考虑存储器带宽，假定所有存储器延迟可以隐藏，则这一 $\mathrm{GPU}$
+          的峰值单精度浮点吞吐量为 多少 $\mathrm{GFLOP/s}$?
+          在给定存储器带宽限制下，这一吞吐量是否可持续?
+          \par 解：
+          \par 该$\mathrm{GPU}$的峰值吞吐量为 $1.5 \times 16 \times 16=384\mathrm{GFLOP/s}$
+          的单精度吞吐量。
+          但是假设每个单精度操作都需要两个$4$字节操作数并输出一个$4$字节结果。维持
+          这一吞吐量（结社没有时间局限性）将需要$12 \mathrm{bytes/FLOP} \times 384 \mathrm{GFLOP/s}=4.6\mathrm{TB/s}$的片外存储器带宽。
+          因此，这种吞吐量是不可持续的，但当使用片上存储器时，仍然可以在短时间内实现。
+\end{enumerate}
+\end{document}
