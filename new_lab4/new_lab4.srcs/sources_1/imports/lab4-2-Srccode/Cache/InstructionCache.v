@@ -1,5 +1,5 @@
 // asm file name: MatMul.S
-
+/*
 module InstructionCache(
     input wire clk,
     input wire write_en,
@@ -70,7 +70,7 @@ end
     end
 
 endmodule
-/*
+*/
 // asm file name: QuickSort.S
 module InstructionCache(
     input wire clk,
@@ -171,4 +171,4 @@ end
             inst_cache[dealt_debug_addr] <= debug_input;
     end
 
-endmodule*/
+endmodule

@@ -323,32 +323,5 @@ assign PC_4 = PCF + 4;
         .Forward1E(Forward1E),
         .Forward2E(Forward2E)
     	);    
-            // ---------------------------------------------
-    // btb Unit
-    // ---------------------------------------------
-    btb #(
-        .ENTRY_NUM(64)
-    ) btb1 (
-        .clk(CPU_CLK), 
-        .rst(CPU_RST), 
-        .PC_IF(PC_4), 
-        .PC_EX(PCE), 
-        .br_target(BrNPC),
-        .br(BranchE), 
-        .Opcode_EX(PCE[31:26]), 
-        .PredictPC(PredictPC), 
-        .PredictPCValid(PredictPCValid)
-    );
-    // ---------------------------------------------
-    // bht Unit
-    // ---------------------------------------------
-    bht bht1 (
-        .clk(CPU_CLK), 
-        .rst(CPU_RST), 
-        .tag(PC_4[9:2]), 
-        .tagE(PCE[9:2]),
-        .br(BranchE), 
-        .Opcode_EX(PCE[31:26]), 
-        .PredictF(PredictF)
-    );         
+
 endmodule

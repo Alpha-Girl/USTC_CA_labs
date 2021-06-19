@@ -21,7 +21,7 @@ always @ (posedge clk)
     if(wr_req) 
         ram_cell[addr] <= wr_data;
 
-initial begin/*
+initial begin
     ram_cell[       0] = 32'h0000005e;
     ram_cell[       1] = 32'h000000b8;
     ram_cell[       2] = 32'h00000051;
@@ -277,8 +277,8 @@ initial begin/*
     ram_cell[     252] = 32'h00000059;
     ram_cell[     253] = 32'h0000009c;
     ram_cell[     254] = 32'h00000086;
-    ram_cell[     255] = 32'h000000d8;*/
-
+    ram_cell[     255] = 32'h000000d8;
+/*
     // dst matrix C
     ram_cell[       0] = 32'h0;  // 32'hc8528b48;
     ram_cell[       1] = 32'h0;  // 32'h45fe0cc5;
@@ -1049,7 +1049,7 @@ initial begin/*
     ram_cell[     764] = 32'hc1bfe057;
     ram_cell[     765] = 32'hded0780b;
     ram_cell[     766] = 32'h1ae9f25d;
-    ram_cell[     767] = 32'h8453a717;
+    ram_cell[     767] = 32'h8453a717;*/
 end
 
 endmodule
