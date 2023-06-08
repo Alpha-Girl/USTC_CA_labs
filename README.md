@@ -4,4 +4,6 @@
 
 [实验要求](https://git.ustc.edu.cn/Ithaqua/ustc_ca2021_lab)
 
-## PB18000290 胡毅翔
+## Contributors
+
+[@Alpha-Girl](https://github.com/Alpha-Girl),[@yifango](https://github.com/yifango)
